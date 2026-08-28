@@ -130,18 +130,18 @@ CREATE TABLE `filmes` (
 LOCK TABLES `filmes` WRITE;
 /*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
 INSERT INTO `filmes` VALUES
-(1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(7,'Backrooms','Terror','1h50','16+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(8,'Scarface','Ação e Aventura','2h50','18+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(10,'Dia D','Suspense','2h30','12+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(11,'Vingadores','Ação e Aventura','2h30','14+','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(12,'Vingadores 3','Super-Herói','1h30','12+','2026-08-28 21:18:35','2026-08-28 21:18:35');
+(1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(7,'Backrooms','Terror','1h50','16+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(8,'Scarface','Ação e Aventura','2h50','18+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(10,'Dia D','Suspense','2h30','12+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(11,'Vingadores','Ação e Aventura','2h30','14+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(12,'Vingadores 3','Super-Herói','1h30','12+','2026-08-28 22:55:50','2026-08-28 22:55:50');
 /*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,10 +173,10 @@ CREATE TABLE `ingressos` (
 LOCK TABLES `ingressos` WRITE;
 /*!40000 ALTER TABLE `ingressos` DISABLE KEYS */;
 INSERT INTO `ingressos` VALUES
-(1,1,'João Silva','A1','Inteira','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(2,2,'Maria Souza','B3','Meia','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(3,3,'Carlos Pereira','C5','Inteira','2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(4,4,'Eric Zannini','F6','Meia','2026-08-28 21:18:35','2026-08-28 21:18:35');
+(1,1,'João Silva','A1','Inteira','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(2,2,'Maria Souza','B3','Meia','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(3,3,'Carlos Pereira','C5','Inteira','2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(4,4,'Eric Zannini','F6','Meia','2026-08-28 22:55:50','2026-08-28 22:55:50');
 /*!40000 ALTER TABLE `ingressos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,10 +354,10 @@ CREATE TABLE `sessoes` (
 LOCK TABLES `sessoes` WRITE;
 /*!40000 ALTER TABLE `sessoes` DISABLE KEYS */;
 INSERT INTO `sessoes` VALUES
-(1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-08-28 21:18:35','2026-08-28 21:18:35'),
-(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-08-28 21:18:35','2026-08-28 21:18:35');
+(1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-08-28 22:55:50','2026-08-28 22:55:50'),
+(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-08-28 22:55:50','2026-08-28 22:55:50');
 /*!40000 ALTER TABLE `sessoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -389,7 +389,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-(1,'Test User','test@example.com','2026-08-28 21:18:36','$2y$12$qwI.WxjV0.BWeMB78PbOAeo99KdP0AFmU6RFeMLXuSPMaQNfCxe7S','gxXI236aOk','2026-08-28 21:18:36','2026-08-28 21:18:36');
+(1,'Test User','test@example.com','2026-08-28 22:55:50','$2y$12$mV2Z.mK7Dn1JQKJ5Yo.h2.gOoCRP7KI2UFvjmL4FVJsDFekR.aJ76','PS1ORkDYK1','2026-08-28 22:55:50','2026-08-28 22:55:50');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -421,7 +421,7 @@ CREATE TABLE `usuarios` (
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` VALUES
-(1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$8JqxziHq5bLV1zAtz2ySz.6jsB0q0SA5llnM0MEuPahZ2pBWmcA3K','2026-08-28 21:18:35','2026-08-28 21:18:35');
+(1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$v0szhk9DXo.Z4uKnyYRGUu9YIGLHJOfKfM.2k6Ox3lviGf.B7nAKe','2026-08-28 22:55:50','2026-08-28 22:55:50');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -434,4 +434,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-08-28 15:19:18
+-- Dump completed on 2026-08-28 16:55:50

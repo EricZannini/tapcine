@@ -50,10 +50,15 @@
                         <td>{{ $item->duracao }}</td>
                         <td>{{ $item->classificacao }}</td>
                         <td>
-                            <a class='btn btn-warning' title='Editar' href="#">Editar</a>
+                            <a class='btn btn-warning' title='Editar' href="{{ route('filme.edit', $item->id) }}">Editar</a>
                         </td>
                         <td>
-                            <button type="button" class='btn btn-danger' title='Excluir'>Deletar</button>
+                            <form action="{{ route('filme.destroy', $item->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class='btn btn-danger' title='Excluir'
+                                    onclick="return confirm('Deseja Excluir?')">Deletar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
