@@ -56,7 +56,7 @@
         <div class="col-md-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h5>Filmes</h5>
+                    <h5><i class="fa-solid fa-film"></i> Filmes</h5>
                     <p class="muted-2">Cadastre e gerencie os filmes em cartaz.</p>
                     <a href="{{ url('filme') }}" class="btn btn-primary mt-auto">Abrir Filmes</a>
                 </div>
@@ -65,7 +65,7 @@
         <div class="col-md-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h5>Sessões</h5>
+                    <h5><i class="fa-solid fa-clock"></i> Sessões</h5>
                     <p class="muted-2">Defina salas, horários e o filme de cada sessão.</p>
                     <a href="{{ url('sessao') }}" class="btn btn-primary mt-auto">Abrir Sessões</a>
                 </div>
@@ -74,7 +74,7 @@
         <div class="col-md-4">
             <div class="card h-100">
                 <div class="card-body d-flex flex-column">
-                    <h5>Ingressos</h5>
+                    <h5><i class="fa-solid fa-ticket"></i> Ingressos</h5>
                     <p class="muted-2">Registre os ingressos vendidos por sessão.</p>
                     <a href="{{ url('ingresso') }}" class="btn btn-primary mt-auto">Abrir Ingressos</a>
                 </div>

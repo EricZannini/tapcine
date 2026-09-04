@@ -7,6 +7,7 @@
     <title>Login - TapCine</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
     <style>
         /* Paleta TapCine: Rojo #DE1A1A + Ghost White #E8EBF7 */
@@ -95,14 +96,14 @@
                 <form action="{{ route('login.autenticar') }}" method="post">
                     @csrf
                     <div class="mb-3">
-                        <label for="login" class="form-label">Login</label>
+                        <label for="login" class="form-label"><i class="fa-solid fa-user"></i> Login</label>
                         <input type="text" name="login" class="form-control" value="{{ old('login') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="senha" class="form-label">Senha</label>
+                        <label for="senha" class="form-label"><i class="fa-solid fa-lock"></i> Senha</label>
                         <input type="password" name="senha" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-cine w-100">Entrar</button>
+                    <button type="submit" class="btn btn-cine w-100"><i class="fa-solid fa-right-to-bracket"></i> Entrar</button>
                 </form>
             </div>
         </div>

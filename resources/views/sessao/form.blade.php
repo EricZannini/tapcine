@@ -57,7 +57,7 @@
                 <a href="{{ url('sessao') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
             </div>
         </form>
-        <div class="d-none d-lg-block" style="position: absolute; top: 50%; right: 2.5rem; transform: translateY(-50%);">
+        <div class="d-none d-lg-block" style="position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%);">
             @include('partials.lapis')
         </div>
         </div></div></div>

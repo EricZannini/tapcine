@@ -2,8 +2,8 @@
 <style>
     .pencil {
         display: block;
-        width: 8em;
-        height: 8em;
+        width: 11em;
+        height: 11em;
     }
 
     .pencil__body1,

@@ -4,30 +4,30 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="{{ url('/') }}">TapCine</a>
+      <a class="navbar-brand" href="{{ url('/') }}"><i class="fa-solid fa-clapperboard"></i> TapCine</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('/') }}">Início</a>
+          <a class="nav-link" href="{{ url('/') }}"><i class="fa-solid fa-house"></i> Início</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('filme') }}">Filmes</a>
+          <a class="nav-link" href="{{ url('filme') }}"><i class="fa-solid fa-film"></i> Filmes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('sessao') }}">Sessões</a>
+          <a class="nav-link" href="{{ url('sessao') }}"><i class="fa-solid fa-clock"></i> Sessões</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('ingresso') }}">Ingressos</a>
+          <a class="nav-link" href="{{ url('ingresso') }}"><i class="fa-solid fa-ticket"></i> Ingressos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('ficha') }}">Fichas</a>
+          <a class="nav-link" href="{{ url('ficha') }}"><i class="fa-solid fa-clipboard-list"></i> Fichas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('quiz') }}">Quiz</a>
+          <a class="nav-link" href="{{ url('quiz') }}"><i class="fa-solid fa-circle-question"></i> Quiz</a>
         </li>
       </ul>
       @if (session()->has('usuario_id'))
         <span class="navbar-text me-3">Olá, {{ session('usuario_nome') }}</span>
-        <a class="btn btn-outline-light btn-sm" href="{{ url('logout') }}">Sair</a>
+        <a class="btn btn-outline-light btn-sm" href="{{ url('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
       @endif
     </div>
   </div>
