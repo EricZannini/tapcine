@@ -24,7 +24,7 @@
 
                         <input type="hidden" name="id" value="{{ old('id', $data->id ?? '') }}">
 
-                        <div class="mb-2">
+                        <div class="col-6 mb-2">
                             <label for="filme_id">Filme</label>
                             <select name="filme_id" class="form-select">
                                 <option value="">Selecione um filme</option>
@@ -37,19 +37,19 @@
                             </select>
                         </div>
 
-                        <div class="mb-2">
+                        <div class="col-6 mb-2">
                             <label for="diretor">Diretor</label>
                             <input type="text" name="diretor" class="form-control"
                                 value="{{ old('diretor', $data->diretor ?? '') }}">
                         </div>
 
-                        <div class="mb-2">
+                        <div class="col-6 mb-2">
                             <label for="ano">Ano</label>
                             <input type="text" name="ano" class="form-control"
                                 value="{{ old('ano', $data->ano ?? '') }}" placeholder="Ex: 2024">
                         </div>
 
-                        <div class="mb-2">
+                        <div class="col-6 mb-2">
                             <label for="sinopse">Sinopse</label>
                             <textarea name="sinopse" class="form-control" rows="3">{{ old('sinopse', $data->sinopse ?? '') }}</textarea>
                         </div>
