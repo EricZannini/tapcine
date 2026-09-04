@@ -12,7 +12,7 @@
 
         <h4>Formulário Sessão</h4>
         <div class="col-lg-8 px-0">
-        <div class="card"><div class="card-body">
+        <div class="card"><div class="card-body position-relative">
         <form action="{{ $action }}" method="post">
             @csrf
             @if (!empty($data->id))
@@ -57,9 +57,9 @@
                 <a href="{{ url('sessao') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
             </div>
         </form>
-        </div></div></div>
-        <div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-center">
+        <div class="d-none d-lg-block" style="position: absolute; top: 50%; right: 2.5rem; transform: translateY(-50%);">
             @include('partials.lapis')
         </div>
+        </div></div></div>
     </div>
 @stop
