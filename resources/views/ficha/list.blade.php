@@ -6,7 +6,7 @@
         <h3>Fichas Técnicas</h3>
         <form action="{{ route('ficha.search') }}" method="post">
             @csrf
-            <div class="row">
+            <div class="row align-items-end">
                 <div class="col-2">
                     <label for="tipo">Tipo</label>
                     <select name="tipo" class="form-select">

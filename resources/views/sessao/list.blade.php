@@ -6,7 +6,7 @@
         <h3>Sessões</h3>
         <form action="{{ route('sessao.search') }}" method="post">
             @csrf
-            <div class="row">
+            <div class="row align-items-end">
                 <div class="col-2">
                     <label for="tipo">Tipo</label>
                     <select name="tipo" class="form-select">
