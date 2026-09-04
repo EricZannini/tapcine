@@ -1,7 +1,7 @@
 /*M!999999\- enable the sandbox mode */ 
 -- MariaDB dump 10.19-11.4.8-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.1    Database: db_pweb2_cinema
+-- Host: localhost    Database: db_pweb2_cinema
 -- ------------------------------------------------------
 -- Server version	11.4.8-MariaDB
 
@@ -105,6 +105,40 @@ LOCK TABLES `failed_jobs` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `fichas`
+--
+
+DROP TABLE IF EXISTS `fichas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fichas` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `filme_id` bigint(20) unsigned NOT NULL,
+  `diretor` varchar(100) NOT NULL,
+  `ano` varchar(4) NOT NULL,
+  `sinopse` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `fichas_filme_id_unique` (`filme_id`),
+  CONSTRAINT `fichas_filme_id_foreign` FOREIGN KEY (`filme_id`) REFERENCES `filmes` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fichas`
+--
+
+LOCK TABLES `fichas` WRITE;
+/*!40000 ALTER TABLE `fichas` DISABLE KEYS */;
+INSERT INTO `fichas` VALUES
+(1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-09-05 01:58:31','2026-09-05 01:58:31');
+/*!40000 ALTER TABLE `fichas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `filmes`
 --
 
@@ -130,18 +164,18 @@ CREATE TABLE `filmes` (
 LOCK TABLES `filmes` WRITE;
 /*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
 INSERT INTO `filmes` VALUES
-(1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(7,'Backrooms','Terror','1h50','16+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(8,'Scarface','Ação e Aventura','2h50','18+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(10,'Dia D','Suspense','2h30','12+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(11,'Vingadores','Ação e Aventura','2h30','14+','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(12,'Vingadores 3','Super-Herói','1h30','12+','2026-08-28 22:55:50','2026-08-28 22:55:50');
+(1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(7,'Backrooms','Terror','1h50','16+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(8,'Scarface','Ação e Aventura','2h50','18+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(10,'Dia D','Suspense','2h30','12+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(11,'Vingadores','Ação e Aventura','2h30','14+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(12,'Vingadores 3','Super-Herói','1h30','12+','2026-09-05 01:58:31','2026-09-05 01:58:31');
 /*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,10 +207,10 @@ CREATE TABLE `ingressos` (
 LOCK TABLES `ingressos` WRITE;
 /*!40000 ALTER TABLE `ingressos` DISABLE KEYS */;
 INSERT INTO `ingressos` VALUES
-(1,1,'João Silva','A1','Inteira','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(2,2,'Maria Souza','B3','Meia','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(3,3,'Carlos Pereira','C5','Inteira','2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(4,4,'Eric Zannini','F6','Meia','2026-08-28 22:55:50','2026-08-28 22:55:50');
+(1,1,'João Silva','A1','Inteira','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(2,2,'Maria Souza','B3','Meia','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(3,3,'Carlos Pereira','C5','Inteira','2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(4,4,'Eric Zannini','F6','Meia','2026-09-05 01:58:31','2026-09-05 01:58:31');
 /*!40000 ALTER TABLE `ingressos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,7 +286,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +302,8 @@ INSERT INTO `migrations` VALUES
 (4,'2026_08_27_000001_create_filmes_table',1),
 (5,'2026_08_27_000002_create_sessoes_table',1),
 (6,'2026_08_27_000003_create_ingressos_table',1),
-(7,'2026_08_27_000004_create_usuarios_table',1);
+(7,'2026_08_27_000004_create_usuarios_table',1),
+(8,'2026_09_04_000001_create_fichas_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,10 +389,10 @@ CREATE TABLE `sessoes` (
 LOCK TABLES `sessoes` WRITE;
 /*!40000 ALTER TABLE `sessoes` DISABLE KEYS */;
 INSERT INTO `sessoes` VALUES
-(1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-08-28 22:55:50','2026-08-28 22:55:50'),
-(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-08-28 22:55:50','2026-08-28 22:55:50');
+(1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-09-05 01:58:31','2026-09-05 01:58:31'),
+(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-09-05 01:58:31','2026-09-05 01:58:31');
 /*!40000 ALTER TABLE `sessoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -379,7 +414,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -388,8 +423,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES
-(1,'Test User','test@example.com','2026-08-28 22:55:50','$2y$12$mV2Z.mK7Dn1JQKJ5Yo.h2.gOoCRP7KI2UFvjmL4FVJsDFekR.aJ76','PS1ORkDYK1','2026-08-28 22:55:50','2026-08-28 22:55:50');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -421,7 +454,7 @@ CREATE TABLE `usuarios` (
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` VALUES
-(1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$v0szhk9DXo.Z4uKnyYRGUu9YIGLHJOfKfM.2k6Ox3lviGf.B7nAKe','2026-08-28 22:55:50','2026-08-28 22:55:50');
+(1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$jv8Gm3RNXCquejHlWsbmQed1jVnVR8.q.BxM2sY5at06j88brhMvO','2026-09-05 01:58:31','2026-09-05 01:58:31');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -434,4 +467,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-08-28 16:55:50
+-- Dump completed on 2026-09-04 19:58:31
