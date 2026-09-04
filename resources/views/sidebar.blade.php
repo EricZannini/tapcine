@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,6 +17,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('ingresso') }}">Ingressos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('ficha') }}">Fichas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('quiz') }}">Quiz</a>
         </li>
       </ul>
       @if (session()->has('usuario_id'))

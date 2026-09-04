@@ -1,21 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\InicioController;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\SessaoController;
 use App\Http\Controllers\IngressoController;
+use App\Http\Controllers\FichaController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'autenticar'])->name('login.autenticar');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/', function () {
-    return redirect('filme');
-});
-
 Route::middleware('autenticado')->group(function () {
+
+    Route::get('/', [InicioController::class, 'index'])->name('inicio');
+
+    Route::get('/quiz', function () {
+        return view('quiz');
+    })->name('quiz');
 
     Route::get('/filme', [FilmeController::class, 'index']);
     Route::get('/filme/create', [FilmeController::class, 'create']);
@@ -40,5 +43,13 @@ Route::middleware('autenticado')->group(function () {
     Route::put('/ingresso/update/{id}', [IngressoController::class, 'update'])->name('ingresso.update');
     Route::delete('/ingresso/{id}', [IngressoController::class, 'destroy'])->name('ingresso.destroy');
     Route::post('/ingresso/search', [IngressoController::class, 'search'])->name('ingresso.search');
+
+    Route::get('/ficha', [FichaController::class, 'index']);
+    Route::get('/ficha/create', [FichaController::class, 'create']);
+    Route::post('/ficha/store', [FichaController::class, 'store'])->name('ficha.store');
+    Route::get('/ficha/edit/{id}', [FichaController::class, 'edit'])->name('ficha.edit');
+    Route::put('/ficha/update/{id}', [FichaController::class, 'update'])->name('ficha.update');
+    Route::delete('/ficha/{id}', [FichaController::class, 'destroy'])->name('ficha.destroy');
+    Route::post('/ficha/search', [FichaController::class, 'search'])->name('ficha.search');
 
 });

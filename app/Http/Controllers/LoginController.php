@@ -31,7 +31,7 @@ class LoginController extends Controller
                 'usuario_nome' => $usuario->nome,
             ]);
 
-            return redirect('filme')->with('success', 'Bem-vindo, ' . $usuario->nome . '!');
+            return redirect('/')->with('success', 'Bem-vindo, ' . $usuario->nome . '!');
         }
 
         return redirect('login')->with('error', 'Login ou senha inválidos.');

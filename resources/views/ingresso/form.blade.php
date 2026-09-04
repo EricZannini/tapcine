@@ -11,6 +11,8 @@
         @endphp
 
         <h4>Formulário Ingresso</h4>
+        <div class="col-lg-8 px-0">
+        <div class="card"><div class="card-body">
         <form action="{{ $action }}" method="post">
             @csrf
             @if (!empty($data->id))
@@ -53,5 +55,6 @@
                 <a href="{{ url('ingresso') }}" class="btn btn-primary"> Voltar</a>
             </div>
         </form>
+        </div></div></div>
     </div>
 @stop
