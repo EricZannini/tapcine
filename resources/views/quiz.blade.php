@@ -51,7 +51,7 @@
     </style>
 
     <h3 class="mb-1">Quiz de Filmes</h3>
-    <p class="mb-4" style="color: var(--muted)">Teste seus conhecimentos! Clique na alternativa — acertou fica verde, errou fica vermelho.</p>
+    <p class="mb-4" style="color: var(--muted)">Teste seus conhecimentos!</p>
 
     <div class="quiz-grid">
 
