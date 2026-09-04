@@ -19,8 +19,8 @@
                     <input type="text" name="valor" placeholder="Pesquisar..." class="form-control">
                 </div>
                 <div class="col-5">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                    <a href="{{ url('ficha/create') }}" class="btn btn-success"> Novo</a>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+                    <a href="{{ url('ficha/create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Novo</a>
                 </div>
             </div>
         </form>
@@ -47,14 +47,14 @@
                         <td>{{ $item->diretor }}</td>
                         <td>{{ $item->ano }}</td>
                         <td>
-                            <a class='btn btn-warning' title='Editar' href="{{ route('ficha.edit', $item->id) }}">Editar</a>
+                            <a class='btn btn-warning' title='Editar' href="{{ route('ficha.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
                         </td>
                         <td>
                             <form action="{{ route('ficha.destroy', $item->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class='btn btn-danger' title='Excluir'
-                                    onclick="return confirm('Deseja Excluir?')">Deletar</button>
+                                    onclick="return confirm('Deseja Excluir?')"><i class="fa-solid fa-trash"></i> Deletar</button>
                             </form>
                         </td>
                     </tr>

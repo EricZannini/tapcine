@@ -53,10 +53,13 @@
                     value="{{ old('preco', $data->preco ?? '') }}">
             </div>
             <div class="mt-2">
-                <button type="submit" class="btn btn-success">Salvar</button>
-                <a href="{{ url('sessao') }}" class="btn btn-primary"> Voltar</a>
+                <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                <a href="{{ url('sessao') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
             </div>
         </form>
         </div></div></div>
+        <div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-center">
+            @include('partials.lapis')
+        </div>
     </div>
 @stop

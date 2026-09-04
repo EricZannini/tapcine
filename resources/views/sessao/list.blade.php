@@ -19,8 +19,8 @@
                     <input type="text" name="valor" placeholder="Pesquisar..." class="form-control">
                 </div>
                 <div class="col-5">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                    <a href="{{ url('sessao/create') }}" class="btn btn-success"> Novo</a>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+                    <a href="{{ url('sessao/create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Novo</a>
                 </div>
             </div>
         </form>
@@ -51,14 +51,14 @@
                         <td>{{ $item->hora_inicio }}</td>
                         <td>R$ {{ number_format($item->preco, 2, ',', '.') }}</td>
                         <td>
-                            <a class='btn btn-warning' title='Editar' href="{{ route('sessao.edit', $item->id) }}">Editar</a>
+                            <a class='btn btn-warning' title='Editar' href="{{ route('sessao.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
                         </td>
                         <td>
                             <form action="{{ route('sessao.destroy', $item->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class='btn btn-danger' title='Excluir'
-                                    onclick="return confirm('Deseja Excluir?')">Deletar</button>
+                                    onclick="return confirm('Deseja Excluir?')"><i class="fa-solid fa-trash"></i> Deletar</button>
                             </form>
                         </td>
                     </tr>
