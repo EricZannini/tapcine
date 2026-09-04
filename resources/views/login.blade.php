@@ -10,7 +10,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* Paleta TapCine: Rojo #DE1A1A + Ghost White #E8EBF7 */
         /* Plano de fundo em ondas (From Uiverse.io by romeo_3200) + brilho vermelho */
         body.login-cine {
             min-height: 100vh;

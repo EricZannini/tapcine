@@ -22,7 +22,6 @@ class Filme extends Model
         return $this->hasMany(Sessao::class);
     }
 
-    // Um filme tem uma ficha técnica (1:1)
     public function ficha()
     {
         return $this->hasOne(Ficha::class);

@@ -10,7 +10,6 @@ class FichaSeeder extends Seeder
 {
     public function run(): void
     {
-        // Uma ficha para cada um dos primeiros filmes (1:1)
         $filmes = Filme::orderBy('id')->take(3)->get();
 
         $dados = [

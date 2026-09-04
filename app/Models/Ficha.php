@@ -18,7 +18,6 @@ class Ficha extends Model
         'sinopse'
     ];
 
-    // Uma ficha pertence a um filme (1:1)
     public function filme()
     {
         return $this->belongsTo(Filme::class);

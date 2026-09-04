@@ -25,7 +25,6 @@ class FichaController extends Controller
     function validateForm(Request $request, $id = null)
     {
         $request->validate([
-            // unique garante o 1:1 (um filme só pode ter uma ficha)
             'filme_id' => 'required|exists:filmes,id|unique:fichas,filme_id,' . $id,
             'diretor' => 'required',
             'ano' => 'required',

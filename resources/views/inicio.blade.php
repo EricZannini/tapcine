@@ -22,7 +22,6 @@
     <h3 class="mb-1">Bem-vindo, {{ session('usuario_nome', 'Administrador') }}</h3>
     <p class="muted-2 mb-4">Painel administrativo do TapCine.</p>
 
-    {{-- Cards de contagem --}}
     <div class="row g-4 mb-4">
         <div class="col-md-4">
             <div class="card">
@@ -50,7 +49,6 @@
         </div>
     </div>
 
-    {{-- Atalhos para os CRUDs --}}
     <h4 class="mb-3">Acesso rápido</h4>
     <div class="row g-4">
         <div class="col-md-4">

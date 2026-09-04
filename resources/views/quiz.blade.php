@@ -41,12 +41,9 @@
         .result.success { color: #148a3f; }
         .result.error { color: var(--rojo); }
 
-        /* qualquer opção marcada fica vermelha... */
         .radio-input input:checked + label { border-color: var(--rojo); color: var(--rojo); }
-        /* ...mas a correta (value-2) fica verde */
         .radio-input input[value="value-2"]:checked + label { border-color: #17b510; color: #109b0e; }
 
-        /* mostra a mensagem certa/errada conforme a escolha */
         .radio-input:has(input[value="value-2"]:checked) .result.success { display: flex; }
         .radio-input:has(input:not([value="value-2"]):checked) .result.error { display: flex; }
 
@@ -58,7 +55,6 @@
 
     <div class="quiz-grid">
 
-        {{-- Pergunta 1 --}}
         <div class="radio-input">
             <div class="info">
                 <span class="question">No universo Marvel, qual é o nome do planeta natal de Thanos?</span>
@@ -76,7 +72,6 @@
             <span class="result error">Errado</span>
         </div>
 
-        {{-- Pergunta 2 --}}
         <div class="radio-input">
             <div class="info">
                 <span class="question">Que carro vira máquina do tempo em "De Volta para o Futuro"?</span>
@@ -94,7 +89,6 @@
             <span class="result error">Errado</span>
         </div>
 
-        {{-- Pergunta 3 --}}
         <div class="radio-input">
             <div class="info">
                 <span class="question">Em "Jurassic Park", de onde vem o material para recriar os dinossauros?</span>

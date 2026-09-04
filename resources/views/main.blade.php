@@ -10,7 +10,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* ===== Paleta TapCine: Rojo #DE1A1A + Ghost White #E8EBF7 ===== */
         :root {
             --rojo: #de1a1a;
             --rojo-strong: #b81414;
@@ -76,14 +75,12 @@
         .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--rojo-strong); }
         .btn-sm { padding: .3em 1em; }
 
-        /* cores por variante */
         .btn-success, .btn-primary { background: var(--rojo); color: #fff; border: 1px solid var(--rojo-strong); }
         .btn-success:hover, .btn-primary:hover { background: var(--rojo); color: #fff; border-color: var(--rojo-strong); }
         .btn-warning { background: transparent; border-color: var(--rojo); color: var(--rojo); }
         .btn-warning:hover { background: var(--rojo); border-color: var(--rojo); color: #fff; }
         .btn-danger { background: var(--rojo); border-color: var(--rojo-strong); color: #fff; }
         .btn-danger:hover { background: var(--rojo-strong); border-color: var(--rojo-strong); color: #fff; }
-        /* botão "Sair" na barra vermelha: sombra escura pra aparecer */
         .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .28); }
     </style>
 </head>
