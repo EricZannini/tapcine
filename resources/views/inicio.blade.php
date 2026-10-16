@@ -23,16 +23,16 @@
         .pasta { position: relative; width: 210px; height: 150px; cursor: pointer; perspective: 1500px; }
 
         .pasta-fundo {
-            position: absolute; inset: 0; background: #d97706;
+            position: absolute; inset: 0; background: #a51212;
             border-radius: 16px; border-top-left-radius: 0; transition: all .3s ease;
         }
         .pasta-fundo::after {
             content: ''; position: absolute; bottom: 99%; left: 0; width: 70px; height: 16px;
-            background: #d97706; border-top-left-radius: 16px; border-top-right-radius: 16px;
+            background: #a51212; border-top-left-radius: 16px; border-top-right-radius: 16px;
         }
         .pasta-fundo::before {
             content: ''; position: absolute; top: -14px; left: 66px; width: 16px; height: 16px;
-            background: #d97706; clip-path: polygon(0 35%, 0 100%, 50% 100%);
+            background: #a51212; clip-path: polygon(0 35%, 0 100%, 50% 100%);
         }
 
         .papel { position: absolute; inset: 4px; border-radius: 16px; transition: all .3s ease; transform-origin: bottom; }
@@ -42,16 +42,16 @@
 
         .pasta-frente {
             position: absolute; bottom: 0; width: 100%; height: 146px;
-            background: linear-gradient(to top, #f59e0b, #fbbf24);
+            background: linear-gradient(to top, #c41818, #e53935);
             border-radius: 16px; border-top-right-radius: 0; transition: all .3s ease; transform-origin: bottom;
         }
         .pasta-frente::after {
             content: ''; position: absolute; bottom: 99%; right: 0; width: 128px; height: 16px;
-            background: #fbbf24; border-top-left-radius: 16px; border-top-right-radius: 16px;
+            background: #e53935; border-top-left-radius: 16px; border-top-right-radius: 16px;
         }
         .pasta-frente::before {
             content: ''; position: absolute; top: -9px; right: 124px; width: 12px; height: 12px;
-            background: #fbbf24; clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
+            background: #e53935; clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
         }
 
         .pasta:hover .papel-4 { transform: rotateX(-20deg); }
@@ -59,7 +59,7 @@
         .pasta:hover .papel-2 { transform: rotateX(-38deg); }
         .pasta:hover .pasta-frente {
             transform: rotateX(-46deg) translateY(1px);
-            box-shadow: inset 0 20px 40px #fbbf24, inset 0 -20px 40px #d97706;
+            box-shadow: inset 0 20px 40px #e53935, inset 0 -20px 40px #a51212;
         }
         .pasta:hover .pasta-fundo { box-shadow: 0 20px 40px rgba(0, 0, 0, .2); }
 
@@ -70,7 +70,7 @@
     <h3 class="mb-1">Bem-vindo, {{ session('usuario_nome', 'Administrador') }}</h3>
     <p class="muted-2 mb-4">Painel administrativo do TapCine.</p>
 
-    <h4 class="mb-4">Acesso rápido</h4>
+    <br>
     <div class="row g-4">
         <div class="col-md-4">
             @include('partials.pasta', ['titulo' => 'Filmes', 'contagem' => $totalFilmes, 'link' => url('filme')])
