@@ -28,6 +28,7 @@ class FilmeController extends Controller
             'duracao' => 'required',
             'classificacao' => 'required',
             'poster' => 'nullable|image|mimes:png,jpg,jpeg',
+            'nota' => 'nullable|numeric|min:0|max:10',
         ], [
             'titulo.required' => "O :attribute é obrigatorio",
             'genero.required' => "O :attribute é obrigatorio",

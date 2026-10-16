@@ -28,6 +28,9 @@
           <a class="nav-link" href="{{ url('produto') }}"><i class="fa-solid fa-popcorn"></i> Produtos</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ url('graficos') }}"><i class="fa-solid fa-chart-pie"></i> Gráficos</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{ url('quiz') }}"><i class="fa-solid fa-circle-question"></i> Quiz</a>
         </li>
       </ul>

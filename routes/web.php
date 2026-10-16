@@ -8,6 +8,7 @@ use App\Http\Controllers\IngressoController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\AtorController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\GraficoController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -69,5 +70,7 @@ Route::middleware('autenticado')->group(function () {
     Route::put('/produto/update/{id}', [ProdutoController::class, 'update'])->name('produto.update');
     Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
     Route::post('/produto/search', [ProdutoController::class, 'search'])->name('produto.search');
+
+    Route::get('/graficos', [GraficoController::class, 'index'])->name('graficos');
 
 });

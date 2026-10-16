@@ -12,15 +12,23 @@ class IngressoSeeder extends Seeder
     {
         $sessoes = Sessao::orderBy('id')->pluck('id')->all();
 
-        $ingressos = [
-            ['sessao_id' => $sessoes[0], 'cliente_nome' => 'João Silva', 'assento' => 'A1', 'tipo_ingresso' => 'Inteira'],
-            ['sessao_id' => $sessoes[1], 'cliente_nome' => 'Maria Souza', 'assento' => 'B3', 'tipo_ingresso' => 'Meia'],
-            ['sessao_id' => $sessoes[2], 'cliente_nome' => 'Carlos Pereira', 'assento' => 'C5', 'tipo_ingresso' => 'Inteira'],
-            ['sessao_id' => $sessoes[3], 'cliente_nome' => 'Eric Zannini', 'assento' => 'F6', 'tipo_ingresso' => 'Meia'],
-        ];
+        $clientes = ['João Silva', 'Maria Souza', 'Carlos Pereira', 'Eric Zannini', 'Ana Lima', 'Pedro Rocha', 'Júlia Alves', 'Bruno Dias'];
+        $tipos = ['Inteira', 'Meia'];
 
-        foreach ($ingressos as $ingresso) {
-            Ingresso::create($ingresso);
+        // Gera vendas espalhadas nos últimos 10 dias (para o gráfico de área)
+        for ($d = 9; $d >= 0; $d--) {
+            $data = now()->subDays($d)->toDateString();
+            $quantidade = rand(1, 5);
+
+            for ($i = 0; $i < $quantidade; $i++) {
+                Ingresso::create([
+                    'sessao_id' => $sessoes[array_rand($sessoes)],
+                    'cliente_nome' => $clientes[array_rand($clientes)],
+                    'assento' => chr(rand(65, 70)) . rand(1, 10),
+                    'tipo_ingresso' => $tipos[array_rand($tipos)],
+                    'data_venda' => $data,
+                ]);
+            }
         }
     }
 }

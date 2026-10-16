@@ -45,6 +45,11 @@
                 @endif
                 <input type="file" name="poster" class="form-control">
             </div>
+            <div class="col-6">
+                <label for="nota">Nota (0 a 10)</label>
+                <input type="number" step="0.1" min="0" max="10" name="nota" class="form-control"
+                    value="{{ old('nota', $data->nota ?? '') }}">
+            </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
                 <a href="{{ url('filme') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>

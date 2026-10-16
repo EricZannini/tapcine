@@ -14,7 +14,8 @@ class Ingresso extends Model
         'sessao_id',
         'cliente_nome',
         'assento',
-        'tipo_ingresso'
+        'tipo_ingresso',
+        'data_venda'
     ];
 
     public function sessao()

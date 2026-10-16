@@ -41,7 +41,10 @@ class IngressoController extends Controller
     {
         $this->validateForm($request);
 
-        Ingresso::create($request->all());
+        $data = $request->all();
+        $data['data_venda'] = now()->toDateString();
+
+        Ingresso::create($data);
 
         return redirect('ingresso')->with("success", 'Ingresso salvo com sucesso!');
     }

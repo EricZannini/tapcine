@@ -25,6 +25,7 @@ class ProdutoController extends Controller
             'nome' => 'required',
             'categoria' => 'required',
             'preco' => 'required|numeric',
+            'quantidade_vendida' => 'nullable|integer|min:0',
         ], [
             'nome.required' => 'O :attribute é obrigatorio',
             'categoria.required' => 'A :attribute é obrigatoria',

@@ -40,6 +40,11 @@
                 <input type="number" step="0.01" name="preco" class="form-control"
                     value="{{ old('preco', $data->preco ?? '') }}">
             </div>
+            <div class="col-6">
+                <label for="quantidade_vendida">Quantidade Vendida</label>
+                <input type="number" min="0" name="quantidade_vendida" class="form-control"
+                    value="{{ old('quantidade_vendida', $data->quantidade_vendida ?? '') }}">
+            </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
                 <a href="{{ url('produto') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
