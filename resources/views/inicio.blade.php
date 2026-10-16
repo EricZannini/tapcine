@@ -91,8 +91,4 @@
             @include('partials.pasta', ['titulo' => 'Produtos', 'contagem' => $totalProdutos, 'link' => url('produto')])
         </div>
     </div>
-
-    <div class="text-center mt-4">
-        @include('partials.servidor')
-    </div>
 @stop
