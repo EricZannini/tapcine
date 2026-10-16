@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             FichaSeeder::class,
             SessaoSeeder::class,
             IngressoSeeder::class,
+            AtorSeeder::class,
+            ProdutoSeeder::class,
         ]);
     }
 }

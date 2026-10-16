@@ -6,6 +6,8 @@ use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\SessaoController;
 use App\Http\Controllers\IngressoController;
 use App\Http\Controllers\FichaController;
+use App\Http\Controllers\AtorController;
+use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -51,5 +53,21 @@ Route::middleware('autenticado')->group(function () {
     Route::put('/ficha/update/{id}', [FichaController::class, 'update'])->name('ficha.update');
     Route::delete('/ficha/{id}', [FichaController::class, 'destroy'])->name('ficha.destroy');
     Route::post('/ficha/search', [FichaController::class, 'search'])->name('ficha.search');
+
+    Route::get('/ator', [AtorController::class, 'index']);
+    Route::get('/ator/create', [AtorController::class, 'create']);
+    Route::post('/ator/store', [AtorController::class, 'store'])->name('ator.store');
+    Route::get('/ator/edit/{id}', [AtorController::class, 'edit'])->name('ator.edit');
+    Route::put('/ator/update/{id}', [AtorController::class, 'update'])->name('ator.update');
+    Route::delete('/ator/{id}', [AtorController::class, 'destroy'])->name('ator.destroy');
+    Route::post('/ator/search', [AtorController::class, 'search'])->name('ator.search');
+
+    Route::get('/produto', [ProdutoController::class, 'index']);
+    Route::get('/produto/create', [ProdutoController::class, 'create']);
+    Route::post('/produto/store', [ProdutoController::class, 'store'])->name('produto.store');
+    Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit'])->name('produto.edit');
+    Route::put('/produto/update/{id}', [ProdutoController::class, 'update'])->name('produto.update');
+    Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
+    Route::post('/produto/search', [ProdutoController::class, 'search'])->name('produto.search');
 
 });

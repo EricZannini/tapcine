@@ -22,6 +22,12 @@
           <a class="nav-link" href="{{ url('ficha') }}"><i class="fa-solid fa-clipboard-list"></i> Fichas</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ url('ator') }}"><i class="fa-solid fa-user-tie"></i> Atores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('produto') }}"><i class="fa-solid fa-popcorn"></i> Produtos</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{ url('quiz') }}"><i class="fa-solid fa-circle-question"></i> Quiz</a>
         </li>
       </ul>
