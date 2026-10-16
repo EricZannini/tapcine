@@ -9,6 +9,7 @@ use App\Http\Controllers\FichaController;
 use App\Http\Controllers\AtorController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\GraficoController;
+use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -72,5 +73,8 @@ Route::middleware('autenticado')->group(function () {
     Route::post('/produto/search', [ProdutoController::class, 'search'])->name('produto.search');
 
     Route::get('/graficos', [GraficoController::class, 'index'])->name('graficos');
+
+    Route::get('/relatorio/produtos', [RelatorioController::class, 'produtos'])->name('relatorio.produtos');
+    Route::get('/relatorio/ingressos', [RelatorioController::class, 'ingressos'])->name('relatorio.ingressos');
 
 });

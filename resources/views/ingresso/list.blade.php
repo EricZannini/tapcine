@@ -22,6 +22,7 @@
                 <div class="col-5">
                     <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
                     <a href="{{ url('ingresso/create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Novo</a>
+                    <a href="{{ route('relatorio.ingressos') }}" class="btn btn-danger"><i class="fa-solid fa-file-pdf"></i> PDF</a>
                 </div>
             </div>
         </form>
