@@ -70,33 +70,6 @@
     <h3 class="mb-1">Bem-vindo, {{ session('usuario_nome', 'Administrador') }}</h3>
     <p class="muted-2 mb-4">Painel administrativo do TapCine.</p>
 
-    <div class="row g-4 mb-4">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="muted-2">Filmes em cartaz</h6>
-                    <div class="num-big">{{ $totalFilmes }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="muted-2">Sessões programadas</h6>
-                    <div class="num-big">{{ $totalSessoes }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="muted-2">Ingressos vendidos</h6>
-                    <div class="num-big">{{ $totalIngressos }}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <h4 class="mb-4">Acesso rápido</h4>
     <div class="row g-4">
         <div class="col-md-4">
@@ -107,6 +80,15 @@
         </div>
         <div class="col-md-4">
             @include('partials.pasta', ['titulo' => 'Ingressos', 'contagem' => $totalIngressos, 'link' => url('ingresso')])
+        </div>
+        <div class="col-md-4">
+            @include('partials.pasta', ['titulo' => 'Fichas', 'contagem' => $totalFichas, 'link' => url('ficha')])
+        </div>
+        <div class="col-md-4">
+            @include('partials.pasta', ['titulo' => 'Atores', 'contagem' => $totalAtores, 'link' => url('ator')])
+        </div>
+        <div class="col-md-4">
+            @include('partials.pasta', ['titulo' => 'Produtos', 'contagem' => $totalProdutos, 'link' => url('produto')])
         </div>
     </div>
 
