@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Filme;
+use Illuminate\Support\Facades\Storage;
 
 class FilmeController extends Controller
 {
@@ -26,11 +27,14 @@ class FilmeController extends Controller
             'genero' => 'required',
             'duracao' => 'required',
             'classificacao' => 'required',
+            'poster' => 'nullable|image|mimes:png,jpg,jpeg',
         ], [
             'titulo.required' => "O :attribute é obrigatorio",
             'genero.required' => "O :attribute é obrigatorio",
             'duracao.required' => "A :attribute é obrigatoria",
             'classificacao.required' => "A :attribute é obrigatoria",
+            'poster.image' => "O :attribute deve ser uma imagem",
+            'poster.mimes' => "O :attribute deve ser PNG, JPG ou JPEG",
         ]);
     }
 
@@ -38,7 +42,16 @@ class FilmeController extends Controller
     {
         $this->validateForm($request);
 
-        Filme::create($request->all());
+        $data = $request->all();
+        $poster = $request->file('poster');
+
+        if ($poster) {
+            $nome_imagem = date('YmdHis') . "." . $poster->getClientOriginalExtension();
+            $poster->storeAs("imagem/filme", $nome_imagem, 'public');
+            $data['poster'] = "imagem/filme/" . $nome_imagem;
+        }
+
+        Filme::create($data);
 
         return redirect('filme')->with("success", 'Filme salvo com sucesso!');
     }
@@ -54,14 +67,33 @@ class FilmeController extends Controller
     {
         $this->validateForm($request);
 
-        Filme::find($id)->update($request->all());
+        $filme = Filme::find($id);
+        $data = $request->all();
+        $poster = $request->file('poster');
+
+        if ($poster) {
+            if ($filme->poster) {
+                Storage::disk('public')->delete($filme->poster);
+            }
+            $nome_imagem = date('YmdHis') . "." . $poster->getClientOriginalExtension();
+            $poster->storeAs("imagem/filme", $nome_imagem, 'public');
+            $data['poster'] = "imagem/filme/" . $nome_imagem;
+        }
+
+        $filme->update($data);
 
         return redirect('filme')->with("success", 'Filme atualizado com sucesso!');
     }
 
     function destroy($id)
     {
-        Filme::destroy($id);
+        $filme = Filme::find($id);
+
+        if ($filme->poster) {
+            Storage::disk('public')->delete($filme->poster);
+        }
+
+        $filme->delete();
 
         return redirect('filme')->with("success", 'Filme removido com sucesso!');
     }

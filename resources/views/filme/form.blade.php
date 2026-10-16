@@ -13,7 +13,7 @@
         <h4>Formulário Filme</h4>
         <div class="col-lg-8 px-0">
         <div class="card"><div class="card-body position-relative">
-        <form action="{{ $action }}" method="post">
+        <form action="{{ $action }}" method="post" enctype="multipart/form-data">
             @csrf
             @if (!empty($data->id))
                 @method('PUT')
@@ -37,6 +37,13 @@
                 <label for="classificacao">Classificação</label>
                 <input type="text" name="classificacao" class="form-control"
                     value="{{ old('classificacao', $data->classificacao ?? '') }}" placeholder="Ex: 12+">
+            </div>
+            <div class="col-6">
+                <label for="poster">Pôster</label>
+                @if (!empty($data->poster))
+                    <div><img src="/storage/{{ $data->poster }}" width="110" class="mb-2 rounded" alt="Pôster"></div>
+                @endif
+                <input type="file" name="poster" class="form-control">
             </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>

@@ -14,7 +14,8 @@ class Filme extends Model
         'titulo',
         'genero',
         'duracao',
-        'classificacao'
+        'classificacao',
+        'poster'
     ];
 
     public function sessoes()

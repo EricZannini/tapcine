@@ -32,6 +32,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Nacionalidade</th>
                     <th scope="col">Nascimento</th>
@@ -43,6 +44,13 @@
                 @foreach ($dados as $item)
                     <tr>
                         <th scope='row'>{{ $item->id }}</th>
+                        <td>
+                            @if ($item->foto)
+                                <img src="/storage/{{ $item->foto }}" width="45" class="rounded" alt="">
+                            @else
+                                —
+                            @endif
+                        </td>
                         <td>{{ $item->nome }}</td>
                         <td>{{ $item->nacionalidade }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>

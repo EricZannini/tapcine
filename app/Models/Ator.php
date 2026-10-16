@@ -15,5 +15,6 @@ class Ator extends Model
         'nome',
         'nacionalidade',
         'data_nascimento',
+        'foto',
     ];
 }

@@ -13,7 +13,7 @@
         <h4>Formulário Ator</h4>
         <div class="col-lg-8 px-0">
         <div class="card"><div class="card-body">
-        <form action="{{ $action }}" method="post">
+        <form action="{{ $action }}" method="post" enctype="multipart/form-data">
             @csrf
             @if (!empty($data->id))
                 @method('PUT')
@@ -33,6 +33,13 @@
                 <label for="data_nascimento">Data de Nascimento</label>
                 <input type="date" name="data_nascimento" class="form-control"
                     value="{{ old('data_nascimento', $data->data_nascimento ?? '') }}">
+            </div>
+            <div class="col-6">
+                <label for="foto">Foto</label>
+                @if (!empty($data->foto))
+                    <div><img src="/storage/{{ $data->foto }}" width="110" class="mb-2 rounded" alt="Foto"></div>
+                @endif
+                <input type="file" name="foto" class="form-control">
             </div>
             <div class="mt-2">
                 <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>

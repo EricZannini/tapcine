@@ -33,6 +33,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Pôster</th>
                     <th scope="col">Título</th>
                     <th scope="col">Gênero</th>
                     <th scope="col">Duração</th>
@@ -45,6 +46,13 @@
                 @foreach ($dados as $item)
                     <tr>
                         <th scope='row'>{{ $item->id }}</th>
+                        <td>
+                            @if ($item->poster)
+                                <img src="/storage/{{ $item->poster }}" width="45" class="rounded" alt="">
+                            @else
+                                —
+                            @endif
+                        </td>
                         <td>{{ $item->titulo }}</td>
                         <td>{{ $item->genero }}</td>
                         <td>{{ $item->duracao }}</td>
