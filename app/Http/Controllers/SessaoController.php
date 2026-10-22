@@ -10,7 +10,7 @@ class SessaoController extends Controller
 {
     public function index()
     {
-        $dados = Sessao::with('filme')->get();
+        $dados = Sessao::with('filme')->paginate(10);
 
         return view('sessao.list')->with(['dados' => $dados]);
     }

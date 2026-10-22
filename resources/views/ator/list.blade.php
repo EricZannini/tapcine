@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($dados as $item)
+                @forelse ($dados as $item)
                     <tr>
                         <th scope='row'>{{ $item->id }}</th>
                         <td>
@@ -66,8 +66,15 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="7" class="text-center text-muted py-4">Nenhum registro encontrado.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
+        @if (method_exists($dados, 'links'))
+            {{ $dados->links() }}
+        @endif
     </div>
 @stop

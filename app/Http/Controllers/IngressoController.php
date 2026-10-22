@@ -10,7 +10,7 @@ class IngressoController extends Controller
 {
     public function index()
     {
-        $dados = Ingresso::with('sessao.filme')->get();
+        $dados = Ingresso::with('sessao.filme')->paginate(10);
 
         return view('ingresso.list')->with(['dados' => $dados]);
     }

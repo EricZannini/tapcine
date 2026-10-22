@@ -10,7 +10,7 @@ class FichaController extends Controller
 {
     public function index()
     {
-        $dados = Ficha::with('filme')->get();
+        $dados = Ficha::with('filme')->paginate(10);
 
         return view('ficha.list')->with(['dados' => $dados]);
     }

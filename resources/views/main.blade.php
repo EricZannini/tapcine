@@ -86,6 +86,10 @@
         .btn-danger { background: var(--marinho); border-color: var(--marinho); color: #fff; }
         .btn-danger:hover { background: var(--azul); border-color: var(--marinho); color: #fff; }
         .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .28); }
+
+        .page-link { color: var(--marinho); }
+        .page-link:hover { color: var(--laranja); }
+        .page-item.active .page-link { background: var(--laranja); border-color: var(--laranja); color: #fff; }
     </style>
 </head>
 

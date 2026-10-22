@@ -9,7 +9,7 @@ class ProdutoController extends Controller
 {
     public function index()
     {
-        $dados = Produto::all();
+        $dados = Produto::paginate(10);
 
         return view('produto.list')->with(['dados' => $dados]);
     }
