@@ -10,6 +10,7 @@ class AtorController extends Controller
 {
     public function index()
     {
+        // 12 por página = 3 linhas de 4 cards
         $dados = Ator::paginate(12);
 
         return view('ator.list')->with(['dados' => $dados]);

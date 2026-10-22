@@ -68,9 +68,15 @@
         }
         .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--vermelho); }
 
+        /* ===== Imagem dos cards de Filmes e Atores ===== */
+        /* aspect-ratio 2/3 = formato de pôster (mais alto que largo) */
         .card-capa, .capa-vazia { width: 100%; aspect-ratio: 2 / 3; border-bottom: 2px solid var(--vermelho); }
+        /* cover recorta a imagem para preencher o espaço sem esticar */
         .card-capa { object-fit: cover; display: block; }
+        /* quadro com o ícone, usado quando o item não tem imagem */
         .capa-vazia { display: flex; align-items: center; justify-content: center; background: var(--baunilha); color: var(--muted); font-size: 2.5rem; }
+
+        /* botões Editar/Deletar lado a lado; se faltar espaço, quebram de linha */
         .card-acoes { display: flex; flex-wrap: wrap; gap: .5rem; }
         .card-acoes > * { flex: 1 1 100px; }
         .card-acoes .btn { width: 100%; padding: .4em .6em; font-size: .85rem; }
