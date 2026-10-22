@@ -1,50 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 
 <head>
     <meta charset="utf-8">
     <style>
-        body { font-family: 'DejaVu Sans', sans-serif; color: #1c1e2a; font-size: 12px; }
-        h1 { color: #DE1A1A; font-size: 20px; margin-bottom: 2px; }
-        .sub { color: #666; font-size: 11px; margin-bottom: 16px; }
+        body { font-family: 'DejaVu Sans', sans-serif; font-size: 12px; }
         table { width: 100%; border-collapse: collapse; }
-        th { background: #DE1A1A; color: #fff; padding: 7px; text-align: left; font-size: 11px; }
-        td { padding: 6px 7px; border-bottom: 1px solid #ddd; }
-        tr:nth-child(even) td { background: #f5f6fb; }
-        .total { margin-top: 14px; font-weight: bold; }
+        th, td { border: 1px solid #000; padding: 5px; }
     </style>
 </head>
 
 <body>
-    <h1>TapCine — Relatório de Produtos</h1>
-    <div class="sub">Bomboniere · Emitido em {{ date('d/m/Y H:i') }}</div>
+    <h2>Relatório de Produtos</h2>
 
     <table>
-        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Vendidos</th>
+        </tr>
+        @foreach ($dados as $item)
             <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Preço</th>
-                <th>Qtd. Vendida</th>
+                <td>{{ $item->nome }}</td>
+                <td>{{ $item->categoria }}</td>
+                <td>R$ {{ $item->preco }}</td>
+                <td>{{ $item->quantidade_vendida }}</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach ($dados as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->nome }}</td>
-                    <td>{{ $item->categoria }}</td>
-                    <td>R$ {{ number_format($item->preco, 2, ',', '.') }}</td>
-                    <td>{{ $item->quantidade_vendida }}</td>
-                </tr>
-            @endforeach
-        </tbody>
+        @endforeach
     </table>
-
-    <div class="total">
-        Total de produtos: {{ $dados->count() }} · Unidades vendidas: {{ $dados->sum('quantidade_vendida') }}
-    </div>
 </body>
 
 </html>

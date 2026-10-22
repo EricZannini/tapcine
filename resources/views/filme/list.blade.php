@@ -58,7 +58,7 @@
                         <td>{{ $item->genero }}</td>
                         <td>{{ $item->duracao }}</td>
                         <td>{{ $item->classificacao }}</td>
-                        <td>@include('partials.estrelas', ['nota' => $item->nota])</td>
+                        <td>{{ $item->nota }}</td>
                         <td>
                             <a class='btn btn-warning' title='Editar' href="{{ route('filme.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
                         </td>
