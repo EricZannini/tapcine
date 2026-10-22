@@ -27,54 +27,39 @@
 
     </div>
 
-    <div class="row mt-4">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Foto</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Nacionalidade</th>
-                    <th scope="col">Nascimento</th>
-                    <th scope="col">Ação</th>
-                    <th scope="col">Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($dados as $item)
-                    <tr>
-                        <th scope='row'>{{ $item->id }}</th>
-                        <td>
-                            @if ($item->foto)
-                                <img src="/storage/{{ $item->foto }}" width="45" class="rounded" alt="">
-                            @else
-                                —
-                            @endif
-                        </td>
-                        <td>{{ $item->nome }}</td>
-                        <td>{{ $item->nacionalidade }}</td>
-                        <td>{{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</td>
-                        <td>
-                            <a class='btn btn-warning' title='Editar' href="{{ route('ator.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
-                        </td>
-                        <td>
+    <div class="row g-4 mt-1">
+        @forelse ($dados as $item)
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 overflow-hidden">
+                    @if ($item->foto)
+                        <img src="/storage/{{ $item->foto }}" class="card-capa" alt="Foto de {{ $item->nome }}">
+                    @else
+                        <div class="capa-vazia"><i class="fa-solid fa-user-tie"></i></div>
+                    @endif
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="mb-1">{{ $item->nome }}</h5>
+                        <p class="text-muted small mb-2">{{ $item->nacionalidade }}</p>
+                        <p class="small mb-3">Nascimento: {{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</p>
+                        <div class="card-acoes mt-auto">
+                            <a class="btn btn-warning" href="{{ route('ator.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
                             <form action="{{ route('ator.destroy', $item->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class='btn btn-danger' title='Excluir'
+                                <button type="submit" class="btn btn-danger"
                                     onclick="return confirm('Deseja Excluir?')"><i class="fa-solid fa-trash"></i> Deletar</button>
                             </form>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="7" class="text-center text-muted py-4">Nenhum registro encontrado.</td>
-                    </tr>
-                @endforelse
-            </tbody>
-        </table>
-        @if (method_exists($dados, 'links'))
-            {{ $dados->links() }}
-        @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @empty
+            <div class="col-12">
+                <p class="text-center py-4">Nenhum registro encontrado.</p>
+            </div>
+        @endforelse
     </div>
+
+    @if (method_exists($dados, 'links'))
+        <div class="mt-4">{{ $dados->links() }}</div>
+    @endif
 @stop

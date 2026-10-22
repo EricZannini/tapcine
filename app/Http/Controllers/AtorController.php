@@ -10,7 +10,7 @@ class AtorController extends Controller
 {
     public function index()
     {
-        $dados = Ator::paginate(10);
+        $dados = Ator::paginate(12);
 
         return view('ator.list')->with(['dados' => $dados]);
     }

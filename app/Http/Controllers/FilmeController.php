@@ -10,7 +10,7 @@ class FilmeController extends Controller
 {
     public function index()
     {
-        $dados = Filme::paginate(10);
+        $dados = Filme::paginate(12);
 
         return view('filme.list')->with(['dados' => $dados]);
     }

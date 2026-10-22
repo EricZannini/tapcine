@@ -68,6 +68,13 @@
         }
         .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--vermelho); }
 
+        .card-capa, .capa-vazia { width: 100%; aspect-ratio: 2 / 3; border-bottom: 2px solid var(--vermelho); }
+        .card-capa { object-fit: cover; display: block; }
+        .capa-vazia { display: flex; align-items: center; justify-content: center; background: var(--baunilha); color: var(--muted); font-size: 2.5rem; }
+        .card-acoes { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .card-acoes > * { flex: 1 1 100px; }
+        .card-acoes .btn { width: 100%; padding: .4em .6em; font-size: .85rem; }
+
         .table {
             background: var(--card); color: var(--tinta); border-radius: 12px; overflow: hidden;
             box-shadow: 0 14px 30px -18px rgba(92, 17, 18, .4);
