@@ -11,102 +11,95 @@
 
     <style>
         :root {
-            --azul: #4361ee;
-            --azul-escuro: #2f48c9;
-            --lavanda: #c8d1ff;
-            --amarelo: #fbbf24;
-            --amarelo-escuro: #d97706;
-            --tinta: #1b2559;
-            --ground: #4361ee;
+            --vermelho: #d52122;
+            --vermelho-escuro: #a3181a;
+            --baunilha: #fff7e5;
+            --tinta: #5c1112;
+            --ground: #fff7e5;
             --card: #ffffff;
-            --stripe: #eef1ff;
-            --ink: #ffffff;
-            --muted: rgba(255, 255, 255, .8);
-            --line: #dfe4ff;
+            --stripe: #fff7e5;
+            --ink: #d52122;
+            --muted: rgba(213, 33, 34, .75);
+            --line: #f3dcc8;
         }
 
         /* Plano de fundo em ondas (From Uiverse.io by romeo_3200) */
         body {
             background:
                 repeating-radial-gradient(circle at 0% 50%,
-                    rgba(255, 255, 255, .06) 0px, rgba(255, 255, 255, .06) 2px,
+                    rgba(213, 33, 34, .05) 0px, rgba(213, 33, 34, .05) 2px,
                     transparent 2px, transparent 30px),
                 var(--ground);
             background-attachment: fixed;
             color: var(--ink);
         }
 
-        .navbar {
-            background: var(--azul) !important;
-            border-bottom: 3px solid var(--amarelo) !important;
-        }
-        .navbar .navbar-brand { color: #fff !important; font-weight: 700; letter-spacing: -.01em; }
-        .navbar .navbar-brand i { color: var(--amarelo); }
-        .navbar .nav-link { color: rgba(255, 255, 255, .85) !important; }
-        .navbar .nav-link:hover { color: var(--amarelo) !important; }
-        .navbar .nav-link.active { color: var(--amarelo) !important; font-weight: 700; }
+        .navbar { background: var(--vermelho) !important; }
+        .navbar .navbar-brand { color: var(--baunilha) !important; font-weight: 700; letter-spacing: -.01em; }
+        .navbar .nav-link { color: rgba(255, 247, 229, .8) !important; }
+        .navbar .nav-link:hover { color: var(--baunilha) !important; }
+        .navbar .nav-link.active { color: var(--baunilha) !important; font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
 
         .navbar .dropdown-menu {
             --bs-dropdown-bg: #fff;
             --bs-dropdown-link-color: var(--tinta);
-            --bs-dropdown-link-hover-bg: var(--stripe);
+            --bs-dropdown-link-hover-bg: var(--baunilha);
             --bs-dropdown-link-hover-color: var(--tinta);
-            --bs-dropdown-link-active-bg: var(--amarelo);
-            --bs-dropdown-link-active-color: var(--tinta);
+            --bs-dropdown-link-active-bg: var(--vermelho);
+            --bs-dropdown-link-active-color: var(--baunilha);
             --bs-dropdown-divider-bg: var(--line);
-            border: 2px solid var(--tinta); border-radius: 12px; box-shadow: 4px 4px 0 var(--tinta);
+            border: 2px solid var(--vermelho); border-radius: 12px; box-shadow: 4px 4px 0 var(--vermelho);
         }
-        .navbar .dropdown-item i { width: 18px; color: var(--azul); }
-        .navbar-text { color: rgba(255, 255, 255, .9) !important; }
-        .navbar .btn-outline-light, .navbar .btn-outline-light:hover { background: #fff; color: var(--tinta); border-color: #fff; }
+        .navbar .dropdown-item i { width: 18px; }
+        .navbar-text { color: var(--baunilha) !important; }
+        .navbar .btn-outline-light, .navbar .btn-outline-light:hover { background: var(--baunilha); color: var(--vermelho); border-color: var(--baunilha); }
 
         main.container { margin-top: 26px; }
         h3, h4 { color: var(--ink); font-weight: 700; }
-        h3 > i, h4 > i { color: var(--amarelo); }
 
         .rodape { text-align: center; color: var(--muted); font-size: 13px; padding: 40px 0 24px; }
-        a { color: var(--amarelo); }
+        a { color: var(--vermelho); }
 
         /* ===== Cards com sombra sólida deslocada (efeito Uiverse) ===== */
         .card {
             background: var(--card); color: var(--tinta);
-            border: 2px solid var(--tinta); border-radius: 14px;
-            box-shadow: 6px 6px 0 var(--tinta); transition: all .2s ease;
+            border: 2px solid var(--vermelho); border-radius: 14px;
+            box-shadow: 6px 6px 0 var(--vermelho); transition: all .2s ease;
         }
-        .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--tinta); }
+        .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--vermelho); }
 
         .table {
             background: var(--card); color: var(--tinta); border-radius: 12px; overflow: hidden;
-            box-shadow: 0 14px 30px -18px rgba(27, 37, 89, .5);
+            box-shadow: 0 14px 30px -18px rgba(92, 17, 18, .4);
         }
         .table > :not(caption) > * > * { border-color: var(--line); }
-        .table thead th { color: var(--azul); text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
+        .table thead th { color: var(--vermelho); text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
         .table.table-striped > tbody > tr:nth-of-type(odd) > * { background: var(--stripe); }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--azul); box-shadow: 0 0 0 .2rem rgba(67, 97, 238, .25);
+            border-color: var(--vermelho); box-shadow: 0 0 0 .2rem rgba(213, 33, 34, .2);
         }
 
         /* ===== Efeito Uiverse (pílula + "salto" no hover) em TODOS os botões ===== */
         .btn {
             border-radius: 10em; font-weight: 600; padding: .5em 1.4em;
-            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 var(--tinta);
+            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 var(--vermelho-escuro);
         }
-        .btn:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--tinta); }
-        .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--tinta); }
+        .btn:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--vermelho-escuro); }
+        .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--vermelho-escuro); }
         .btn-sm { padding: .3em 1em; }
 
-        .btn-success, .btn-primary { background: var(--amarelo); color: var(--tinta); border: 1px solid var(--amarelo-escuro); }
-        .btn-success:hover, .btn-primary:hover { background: var(--amarelo); color: var(--tinta); border-color: var(--amarelo-escuro); }
-        .btn-warning { background: transparent; border-color: var(--azul); color: var(--azul); }
-        .btn-warning:hover { background: var(--azul); border-color: var(--azul); color: #fff; }
-        .btn-danger { background: var(--tinta); border-color: var(--tinta); color: #fff; }
-        .btn-danger:hover { background: var(--azul-escuro); border-color: var(--tinta); color: #fff; }
-        .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .28); }
+        .btn-success, .btn-primary { background: var(--vermelho); color: var(--baunilha); border: 1px solid var(--vermelho-escuro); }
+        .btn-success:hover, .btn-primary:hover { background: var(--vermelho); color: var(--baunilha); border-color: var(--vermelho-escuro); }
+        .btn-warning { background: transparent; border-color: var(--vermelho); color: var(--vermelho); }
+        .btn-warning:hover { background: var(--vermelho); border-color: var(--vermelho); color: var(--baunilha); }
+        .btn-danger { background: var(--tinta); border-color: var(--tinta); color: var(--baunilha); }
+        .btn-danger:hover { background: var(--vermelho-escuro); border-color: var(--tinta); color: var(--baunilha); }
+        .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .25); }
 
-        .page-link { color: var(--tinta); }
-        .page-link:hover { color: var(--azul); }
-        .page-item.active .page-link { background: var(--amarelo); border-color: var(--amarelo-escuro); color: var(--tinta); }
+        .page-link { color: var(--vermelho); }
+        .page-link:hover { color: var(--vermelho-escuro); }
+        .page-item.active .page-link { background: var(--vermelho); border-color: var(--vermelho); color: var(--baunilha); }
         nav .small.text-muted { color: var(--muted) !important; }
     </style>
 </head>

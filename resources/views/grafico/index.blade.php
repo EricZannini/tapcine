@@ -36,7 +36,7 @@
             chart: { type: 'pie', height: 330 },
             series: @json($produtoDados),
             labels: @json($produtoLabels),
-            colors: ['#4361ee', '#fbbf24', '#1b2559', '#f59e0b', '#8ea2ff', '#d97706'],
+            colors: ['#d52122', '#5c1112', '#f0a3a3', '#a3181a', '#e8595a', '#fbbf24'],
             legend: { position: 'bottom' }
         }).render();
 
@@ -45,7 +45,7 @@
             series: [{ name: 'Nota', data: @json($filmeDados) }],
             xaxis: { categories: @json($filmeLabels), labels: { rotate: -45, style: { fontSize: '10px' } } },
             yaxis: { max: 10 },
-            colors: ['#4361ee'],
+            colors: ['#d52122'],
             plotOptions: { bar: { borderRadius: 4, columnWidth: '55%' } },
             dataLabels: { enabled: false }
         }).render();
@@ -54,7 +54,7 @@
             chart: { type: 'area', height: 330 },
             series: [{ name: 'Ingressos', data: @json($ingressoDados) }],
             xaxis: { categories: @json($ingressoLabels) },
-            colors: ['#f59e0b'],
+            colors: ['#d52122'],
             stroke: { curve: 'smooth' },
             fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0.1 } },
             dataLabels: { enabled: false }

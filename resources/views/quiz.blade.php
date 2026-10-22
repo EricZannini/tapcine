@@ -20,7 +20,7 @@
 
         .info { margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
         .question { color: var(--tinta); font-size: 1rem; line-height: 1.25rem; font-weight: 800; }
-        .steps { background: var(--azul); padding: 4px 8px; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+        .steps { background: var(--vermelho); padding: 4px 8px; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
 
         .radio-input label {
             display: flex;
@@ -35,13 +35,13 @@
             color: var(--tinta);
             transition: .25s ease;
         }
-        .radio-input label:hover { background: #eef1ff; border-color: #bbb; }
+        .radio-input label:hover { background: #fff7e5; border-color: #bbb; }
 
         .result { margin-top: 10px; font-weight: 700; font-size: 13px; display: none; }
         .result.success { color: #148a3f; }
         .result.error { color: #dc3545; }
 
-        .radio-input input:checked + label { border-color: var(--azul); color: var(--azul); }
+        .radio-input input:checked + label { border-color: var(--vermelho); color: var(--vermelho); }
         .radio-input input[value="value-2"]:checked + label { border-color: #17b510; color: #109b0e; }
 
         .radio-input:has(input[value="value-2"]:checked) .result.success { display: flex; }
