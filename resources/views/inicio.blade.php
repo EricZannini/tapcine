@@ -2,37 +2,23 @@
 @section('titulo', 'Início - TapCine')
 @section('conteudo')
     <style>
-        /* Cards com sombra sólida deslocada (estilo Uiverse) na paleta */
-        .card {
-            background: var(--card);
-            color: var(--ink);
-            border: 2px solid var(--rojo);
-            border-radius: 14px;
-            box-shadow: 6px 6px 0 var(--rojo-strong);
-            transition: all .2s ease;
-        }
-        .card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0 var(--rojo-strong);
-        }
         .muted-2 { color: var(--muted); }
-        .num-big { font-size: 42px; font-weight: 700; letter-spacing: -.02em; line-height: 1; color: var(--rojo); }
 
         /* Pasta animada (From Uiverse.io - reimplementado em CSS) */
         .pasta-card { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--ink); }
         .pasta { position: relative; width: 210px; height: 150px; cursor: pointer; perspective: 1500px; }
 
         .pasta-fundo {
-            position: absolute; inset: 0; background: #d97706;
+            position: absolute; inset: 0; background: #f36b2e;
             border-radius: 16px; border-top-left-radius: 0; transition: all .3s ease;
         }
         .pasta-fundo::after {
             content: ''; position: absolute; bottom: 99%; left: 0; width: 70px; height: 16px;
-            background: #d97706; border-top-left-radius: 16px; border-top-right-radius: 16px;
+            background: #f36b2e; border-top-left-radius: 16px; border-top-right-radius: 16px;
         }
         .pasta-fundo::before {
             content: ''; position: absolute; top: -14px; left: 66px; width: 16px; height: 16px;
-            background: #d97706; clip-path: polygon(0 35%, 0 100%, 50% 100%);
+            background: #f36b2e; clip-path: polygon(0 35%, 0 100%, 50% 100%);
         }
 
         .papel { position: absolute; inset: 4px; border-radius: 16px; transition: all .3s ease; transform-origin: bottom; }
@@ -42,16 +28,16 @@
 
         .pasta-frente {
             position: absolute; bottom: 0; width: 100%; height: 146px;
-            background: linear-gradient(to top, #f59e0b, #fbbf24);
+            background: linear-gradient(to top, #f59a1e, #f7b84b);
             border-radius: 16px; border-top-right-radius: 0; transition: all .3s ease; transform-origin: bottom;
         }
         .pasta-frente::after {
             content: ''; position: absolute; bottom: 99%; right: 0; width: 128px; height: 16px;
-            background: #fbbf24; border-top-left-radius: 16px; border-top-right-radius: 16px;
+            background: #f7b84b; border-top-left-radius: 16px; border-top-right-radius: 16px;
         }
         .pasta-frente::before {
             content: ''; position: absolute; top: -9px; right: 124px; width: 12px; height: 12px;
-            background: #fbbf24; clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
+            background: #f7b84b; clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
         }
 
         .pasta:hover .papel-4 { transform: rotateX(-20deg); }
@@ -59,7 +45,7 @@
         .pasta:hover .papel-2 { transform: rotateX(-38deg); }
         .pasta:hover .pasta-frente {
             transform: rotateX(-46deg) translateY(1px);
-            box-shadow: inset 0 20px 40px #fbbf24, inset 0 -20px 40px #d97706;
+            box-shadow: inset 0 20px 40px #f7b84b, inset 0 -20px 40px #f36b2e;
         }
         .pasta:hover .pasta-fundo { box-shadow: 0 20px 40px rgba(0, 0, 0, .2); }
 

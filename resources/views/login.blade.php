@@ -20,43 +20,43 @@
                 repeating-radial-gradient(circle at 0% 50%,
                     rgba(0, 0, 0, .04) 0px, rgba(0, 0, 0, .04) 2px,
                     transparent 2px, transparent 30px),
-                radial-gradient(900px 500px at 50% -10%, rgba(222, 26, 26, .16), transparent 60%),
-                #e8ebf7;
+                radial-gradient(900px 500px at 50% -10%, rgba(243, 107, 46, .16), transparent 60%),
+                #c4e7e5;
         }
 
         .login-box { width: 100%; max-width: 380px; }
 
         .login-box .card {
             border-radius: 16px;
-            border: 2px solid #de1a1a;
-            box-shadow: 6px 6px 0 #b81414;
+            border: 2px solid #f36b2e;
+            box-shadow: 6px 6px 0 #19244e;
             transition: all .2s ease;
         }
         .login-box .card:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0 #b81414;
+            box-shadow: 8px 8px 0 #19244e;
         }
 
         .cine-brand { text-align: center; margin-bottom: 20px; }
         .cine-brand .mark {
             display: inline-grid; place-items: center; width: 46px; height: 46px;
             border-radius: 12px; margin-bottom: 10px; color: #fff;
-            background: linear-gradient(150deg, #de1a1a, #b81414);
-            box-shadow: 0 0 0 1px rgba(222, 26, 26, .3), 0 10px 22px -10px rgba(222, 26, 26, .5);
+            background: linear-gradient(150deg, #f36b2e, #f59a1e);
+            box-shadow: 0 0 0 1px rgba(243, 107, 46, .3), 0 10px 22px -10px rgba(243, 107, 46, .5);
         }
-        .cine-brand h3 { color: #1c1e2a; font-weight: 700; letter-spacing: -.01em; margin: 0; }
-        .cine-brand p { color: #6b7080; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin: 4px 0 0; }
+        .cine-brand h3 { color: #19244e; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+        .cine-brand p { color: #4a5580; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin: 4px 0 0; }
 
-        .form-control:focus { border-color: #de1a1a; box-shadow: 0 0 0 .2rem rgba(222, 26, 26, .16); }
+        .form-control:focus { border-color: #f36b2e; box-shadow: 0 0 0 .2rem rgba(243, 107, 46, .16); }
 
         /* Botão Uiverse adaptado à paleta: pílula com salto no hover */
         .btn-cine {
-            background: #de1a1a; color: #fff; border: 1px solid #b81414;
+            background: #f36b2e; color: #fff; border: 1px solid #19244e;
             border-radius: 10em; font-weight: 600; padding: .6em 1.6em;
-            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 #b81414;
+            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 #19244e;
         }
-        .btn-cine:hover { background: #de1a1a; color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #b81414; }
-        .btn-cine:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #b81414; }
+        .btn-cine:hover { background: #f36b2e; color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #19244e; }
+        .btn-cine:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #19244e; }
     </style>
 </head>
 

@@ -11,14 +11,17 @@
 
     <style>
         :root {
-            --rojo: #de1a1a;
-            --rojo-strong: #b81414;
-            --ground: #e8ebf7;
+            --laranja: #f36b2e;
+            --manga: #f59a1e;
+            --agua: #c4e7e5;
+            --azul: #253c96;
+            --marinho: #19244e;
+            --ground: #c4e7e5;
             --card: #ffffff;
-            --stripe: #f5f6fb;
-            --ink: #1c1e2a;
-            --muted: #5b5f70;
-            --line: #d5d9e8;
+            --stripe: #eaf6f5;
+            --ink: #19244e;
+            --muted: #4a5580;
+            --line: #cfe3e2;
         }
 
         /* Plano de fundo em ondas (From Uiverse.io by romeo_3200) */
@@ -33,54 +36,55 @@
         }
 
         .navbar {
-            background: var(--rojo) !important;
-            border-bottom: 0 !important;
-            box-shadow: 0 3px 14px -7px rgba(222, 26, 26, .55);
+            background: var(--marinho) !important;
+            border-bottom: 3px solid var(--laranja) !important;
+            box-shadow: 0 3px 14px -7px rgba(25, 36, 78, .55);
         }
         .navbar .navbar-brand { color: #fff !important; font-weight: 700; letter-spacing: -.01em; }
+        .navbar .navbar-brand i { color: var(--laranja); }
         .navbar .nav-link { color: rgba(255, 255, 255, .85) !important; }
-        .navbar .nav-link:hover { color: #fff !important; }
+        .navbar .nav-link:hover { color: var(--manga) !important; }
         .navbar-text { color: rgba(255, 255, 255, .9) !important; }
 
         main.container { margin-top: 26px; }
         h3, h4 { color: var(--ink); font-weight: 700; }
-        a { color: var(--rojo); }
+        a { color: var(--laranja); }
 
         /* ===== Cards com sombra sólida deslocada (efeito Uiverse) ===== */
         .card {
             background: var(--card); color: var(--ink);
-            border: 2px solid var(--rojo); border-radius: 14px;
-            box-shadow: 6px 6px 0 var(--rojo-strong); transition: all .2s ease;
+            border: 2px solid var(--laranja); border-radius: 14px;
+            box-shadow: 6px 6px 0 var(--marinho); transition: all .2s ease;
         }
-        .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--rojo-strong); }
+        .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--marinho); }
 
         .table {
             background: var(--card); color: var(--ink); border-radius: 12px; overflow: hidden;
             box-shadow: 0 1px 2px rgba(28, 30, 42, .04), 0 14px 30px -20px rgba(28, 30, 42, .25);
         }
         .table > :not(caption) > * > * { border-color: var(--line); }
-        .table thead th { color: var(--muted); text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
+        .table thead th { color: var(--azul); text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
         .table.table-striped > tbody > tr:nth-of-type(odd) > * { background: var(--stripe); }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--rojo); box-shadow: 0 0 0 .2rem rgba(222, 26, 26, .15);
+            border-color: var(--laranja); box-shadow: 0 0 0 .2rem rgba(243, 107, 46, .18);
         }
 
         /* ===== Efeito Uiverse (pílula + "salto" no hover) em TODOS os botões ===== */
         .btn {
             border-radius: 10em; font-weight: 600; padding: .5em 1.4em;
-            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 var(--rojo-strong);
+            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 var(--marinho);
         }
-        .btn:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--rojo-strong); }
-        .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--rojo-strong); }
+        .btn:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--marinho); }
+        .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--marinho); }
         .btn-sm { padding: .3em 1em; }
 
-        .btn-success, .btn-primary { background: var(--rojo); color: #fff; border: 1px solid var(--rojo-strong); }
-        .btn-success:hover, .btn-primary:hover { background: var(--rojo); color: #fff; border-color: var(--rojo-strong); }
-        .btn-warning { background: transparent; border-color: var(--rojo); color: var(--rojo); }
-        .btn-warning:hover { background: var(--rojo); border-color: var(--rojo); color: #fff; }
-        .btn-danger { background: var(--rojo); border-color: var(--rojo-strong); color: #fff; }
-        .btn-danger:hover { background: var(--rojo-strong); border-color: var(--rojo-strong); color: #fff; }
+        .btn-success, .btn-primary { background: var(--laranja); color: #fff; border: 1px solid var(--marinho); }
+        .btn-success:hover, .btn-primary:hover { background: var(--laranja); color: #fff; border-color: var(--marinho); }
+        .btn-warning { background: transparent; border-color: var(--azul); color: var(--azul); }
+        .btn-warning:hover { background: var(--azul); border-color: var(--azul); color: #fff; }
+        .btn-danger { background: var(--marinho); border-color: var(--marinho); color: #fff; }
+        .btn-danger:hover { background: var(--azul); border-color: var(--marinho); color: #fff; }
         .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .28); }
     </style>
 </head>

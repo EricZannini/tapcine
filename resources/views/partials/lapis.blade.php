@@ -96,7 +96,7 @@
     }
 </style>
 
-<div style="color: var(--rojo, #de1a1a);">
+<div style="color: var(--laranja, #f36b2e);">
     <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
         <defs>
             <clipPath id="pencil-eraser">
@@ -109,16 +109,16 @@
         <g transform="translate(100,100)" class="pencil__rotate">
             <g fill="none">
                 <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12"
-                    stroke-width="30" stroke="hsl(0,80%,48%)" r="64" class="pencil__body1"></circle>
+                    stroke-width="30" stroke="hsl(19,85%,48%)" r="64" class="pencil__body1"></circle>
                 <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96"
-                    stroke-width="10" stroke="hsl(0,80%,58%)" r="74" class="pencil__body2"></circle>
+                    stroke-width="10" stroke="hsl(19,85%,58%)" r="74" class="pencil__body2"></circle>
                 <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29"
-                    stroke-width="10" stroke="hsl(0,80%,38%)" r="54" class="pencil__body3"></circle>
+                    stroke-width="10" stroke="hsl(19,85%,38%)" r="54" class="pencil__body3"></circle>
             </g>
             <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
                 <g class="pencil__eraser-skew">
-                    <rect height="30" width="30" ry="5" rx="5" fill="hsl(0,80%,68%)"></rect>
-                    <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(0,80%,58%)"></rect>
+                    <rect height="30" width="30" ry="5" rx="5" fill="hsl(19,85%,68%)"></rect>
+                    <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(19,85%,58%)"></rect>
                     <rect height="20" width="30" fill="hsl(0,10%,90%)"></rect>
                     <rect height="20" width="15" fill="hsl(0,10%,70%)"></rect>
                     <rect height="20" width="5" fill="hsl(0,10%,80%)"></rect>

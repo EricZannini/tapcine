@@ -11,16 +11,16 @@
             padding: 16px;
             background: var(--card);
             color: var(--ink);
-            border: 2px solid var(--rojo);
+            border: 2px solid var(--laranja);
             border-radius: 14px;
-            box-shadow: 6px 6px 0 var(--rojo-strong);
+            box-shadow: 6px 6px 0 var(--marinho);
             transition: transform .2s ease, box-shadow .2s ease;
         }
-        .radio-input:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--rojo-strong); }
+        .radio-input:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--marinho); }
 
         .info { margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
         .question { color: var(--ink); font-size: 1rem; line-height: 1.25rem; font-weight: 800; }
-        .steps { background: var(--rojo); padding: 4px 8px; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+        .steps { background: var(--laranja); padding: 4px 8px; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
 
         .radio-input label {
             display: flex;
@@ -39,9 +39,9 @@
 
         .result { margin-top: 10px; font-weight: 700; font-size: 13px; display: none; }
         .result.success { color: #148a3f; }
-        .result.error { color: var(--rojo); }
+        .result.error { color: var(--laranja); }
 
-        .radio-input input:checked + label { border-color: var(--rojo); color: var(--rojo); }
+        .radio-input input:checked + label { border-color: var(--laranja); color: var(--laranja); }
         .radio-input input[value="value-2"]:checked + label { border-color: #17b510; color: #109b0e; }
 
         .radio-input:has(input[value="value-2"]:checked) .result.success { display: flex; }
