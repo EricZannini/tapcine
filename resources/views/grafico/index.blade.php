@@ -1,7 +1,7 @@
 @extends('main')
 @section('titulo', 'Gráficos - TapCine')
 @section('conteudo')
-    <h3 class="mb-4">Gráficos</h3>
+    <h3 class="mb-4"><i class="fa-solid fa-chart-pie"></i> Gráficos</h3>
 
     <div class="row g-4">
         <div class="col-lg-6">

@@ -10,7 +10,7 @@
             }
         @endphp
 
-        <h4>Formulário Produto</h4>
+        <h4><i class="fa-solid fa-cookie-bite"></i> Formulário Produto</h4>
         <div class="col-lg-8 px-0">
         <div class="card"><div class="card-body">
         <form action="{{ $action }}" method="post">

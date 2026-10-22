@@ -11,7 +11,7 @@
             }
         @endphp
 
-        <h4>Ficha Técnica</h4>
+        <h4><i class="fa-solid fa-clipboard-list"></i> Ficha Técnica</h4>
 
         <div class="col-lg-8 px-0">
             <div class="card">

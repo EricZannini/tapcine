@@ -7,31 +7,31 @@
       <a class="navbar-brand" href="{{ url('/') }}"><i class="fa-solid fa-clapperboard"></i> TapCine</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('/') }}"><i class="fa-solid fa-house"></i> Início</a>
+          <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}"><i class="fa-solid fa-house"></i> Início</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('filme') }}"><i class="fa-solid fa-film"></i> Filmes</a>
+          <a class="nav-link {{ request()->is('filme*') ? 'active' : '' }}" href="{{ url('filme') }}"><i class="fa-solid fa-film"></i> Filmes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('sessao') }}"><i class="fa-solid fa-clock"></i> Sessões</a>
+          <a class="nav-link {{ request()->is('sessao*') ? 'active' : '' }}" href="{{ url('sessao') }}"><i class="fa-solid fa-clock"></i> Sessões</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('ingresso') }}"><i class="fa-solid fa-ticket"></i> Ingressos</a>
+          <a class="nav-link {{ request()->is('ingresso*') ? 'active' : '' }}" href="{{ url('ingresso') }}"><i class="fa-solid fa-ticket"></i> Ingressos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('ficha') }}"><i class="fa-solid fa-clipboard-list"></i> Fichas</a>
+          <a class="nav-link {{ request()->is('ficha*') ? 'active' : '' }}" href="{{ url('ficha') }}"><i class="fa-solid fa-clipboard-list"></i> Fichas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('ator') }}"><i class="fa-solid fa-user-tie"></i> Atores</a>
+          <a class="nav-link {{ request()->is('ator*') ? 'active' : '' }}" href="{{ url('ator') }}"><i class="fa-solid fa-user-tie"></i> Atores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('produto') }}"><i class="fa-solid fa-popcorn"></i> Produtos</a>
+          <a class="nav-link {{ request()->is('produto*') ? 'active' : '' }}" href="{{ url('produto') }}"><i class="fa-solid fa-cookie-bite"></i> Produtos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('graficos') }}"><i class="fa-solid fa-chart-pie"></i> Gráficos</a>
+          <a class="nav-link {{ request()->is('graficos*') ? 'active' : '' }}" href="{{ url('graficos') }}"><i class="fa-solid fa-chart-pie"></i> Gráficos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('quiz') }}"><i class="fa-solid fa-circle-question"></i> Quiz</a>
+          <a class="nav-link {{ request()->is('quiz*') ? 'active' : '' }}" href="{{ url('quiz') }}"><i class="fa-solid fa-circle-question"></i> Quiz</a>
         </li>
       </ul>
       @if (session()->has('usuario_id'))

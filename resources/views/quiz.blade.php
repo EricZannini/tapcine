@@ -50,7 +50,7 @@
         .quiz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 4px; }
     </style>
 
-    <h3 class="mb-1">Quiz de Filmes</h3>
+    <h3 class="mb-1"><i class="fa-solid fa-circle-question"></i> Quiz de Filmes</h3>
     <p class="mb-4" style="color: var(--muted)">Teste seus conhecimentos!</p>
 
     <div class="quiz-grid">

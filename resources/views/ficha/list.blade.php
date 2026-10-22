@@ -3,7 +3,7 @@
 @section('conteudo')
     <div class="row">
 
-        <h3>Fichas Técnicas</h3>
+        <h3><i class="fa-solid fa-clipboard-list"></i> Fichas Técnicas</h3>
         <form action="{{ route('ficha.search') }}" method="post">
             @csrf
             <div class="row align-items-end">

@@ -44,11 +44,15 @@
         .navbar .navbar-brand i { color: var(--amarelo); }
         .navbar .nav-link { color: rgba(255, 255, 255, .85) !important; }
         .navbar .nav-link:hover { color: var(--amarelo) !important; }
+        .navbar .nav-link.active { color: var(--amarelo) !important; font-weight: 700; }
         .navbar-text { color: rgba(255, 255, 255, .9) !important; }
         .navbar .btn-outline-light, .navbar .btn-outline-light:hover { background: #fff; color: var(--tinta); border-color: #fff; }
 
         main.container { margin-top: 26px; }
         h3, h4 { color: var(--ink); font-weight: 700; }
+        h3 > i, h4 > i { color: var(--amarelo); }
+
+        .rodape { text-align: center; color: var(--muted); font-size: 13px; padding: 40px 0 24px; }
         a { color: var(--amarelo); }
 
         /* ===== Cards com sombra sólida deslocada (efeito Uiverse) ===== */
@@ -129,6 +133,10 @@
 
         @yield('conteudo')
     </main>
+
+    <footer class="rodape">
+        TapCine · Eric Zannini e Jasper Dearil · {{ date('Y') }}
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">

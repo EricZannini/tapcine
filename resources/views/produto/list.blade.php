@@ -3,7 +3,7 @@
 @section('conteudo')
     <div class="row">
 
-        <h3>Produtos (Bomboniere)</h3>
+        <h3><i class="fa-solid fa-cookie-bite"></i> Produtos (Bomboniere)</h3>
         <form action="{{ route('produto.search') }}" method="post">
             @csrf
             <div class="row align-items-end">

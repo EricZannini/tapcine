@@ -3,7 +3,7 @@
 @section('conteudo')
     <div class="row">
 
-        <h3>Ingressos</h3>
+        <h3><i class="fa-solid fa-ticket"></i> Ingressos</h3>
         <form action="{{ route('ingresso.search') }}" method="post">
             @csrf
             <div class="row align-items-end">

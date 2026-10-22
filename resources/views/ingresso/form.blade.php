@@ -10,7 +10,7 @@
             }
         @endphp
 
-        <h4>Formulário Ingresso</h4>
+        <h4><i class="fa-solid fa-ticket"></i> Formulário Ingresso</h4>
         <div class="col-lg-8 px-0">
         <div class="card"><div class="card-body position-relative">
         <form action="{{ $action }}" method="post">

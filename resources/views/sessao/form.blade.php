@@ -10,7 +10,7 @@
             }
         @endphp
 
-        <h4>Formulário Sessão</h4>
+        <h4><i class="fa-solid fa-clock"></i> Formulário Sessão</h4>
         <div class="col-lg-8 px-0">
         <div class="card"><div class="card-body position-relative">
         <form action="{{ $action }}" method="post">
