@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* Plano de fundo em ondas (From Uiverse.io by romeo_3200) + brilho vermelho */
+        /* Plano de fundo em ondas (From Uiverse.io by romeo_3200) + brilho claro */
         body.login-cine {
             min-height: 100vh;
             display: flex;
@@ -18,45 +18,45 @@
             justify-content: center;
             background:
                 repeating-radial-gradient(circle at 0% 50%,
-                    rgba(0, 0, 0, .04) 0px, rgba(0, 0, 0, .04) 2px,
+                    rgba(255, 255, 255, .06) 0px, rgba(255, 255, 255, .06) 2px,
                     transparent 2px, transparent 30px),
-                radial-gradient(900px 500px at 50% -10%, rgba(243, 107, 46, .16), transparent 60%),
-                #c4e7e5;
+                radial-gradient(900px 500px at 50% -10%, rgba(255, 255, 255, .18), transparent 60%),
+                #4361ee;
         }
 
         .login-box { width: 100%; max-width: 380px; }
 
         .login-box .card {
             border-radius: 16px;
-            border: 2px solid #f36b2e;
-            box-shadow: 6px 6px 0 #19244e;
+            border: 2px solid #1b2559;
+            box-shadow: 6px 6px 0 #1b2559;
             transition: all .2s ease;
         }
         .login-box .card:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0 #19244e;
+            box-shadow: 8px 8px 0 #1b2559;
         }
 
         .cine-brand { text-align: center; margin-bottom: 20px; }
         .cine-brand .mark {
             display: inline-grid; place-items: center; width: 46px; height: 46px;
-            border-radius: 12px; margin-bottom: 10px; color: #fff;
-            background: linear-gradient(150deg, #f36b2e, #f59a1e);
-            box-shadow: 0 0 0 1px rgba(243, 107, 46, .3), 0 10px 22px -10px rgba(243, 107, 46, .5);
+            border-radius: 12px; margin-bottom: 10px; color: #1b2559;
+            background: linear-gradient(150deg, #fbbf24, #d97706);
+            box-shadow: 0 0 0 1px rgba(217, 119, 6, .3), 0 10px 22px -10px rgba(217, 119, 6, .5);
         }
-        .cine-brand h3 { color: #19244e; font-weight: 700; letter-spacing: -.01em; margin: 0; }
-        .cine-brand p { color: #4a5580; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin: 4px 0 0; }
+        .cine-brand h3 { color: #1b2559; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+        .cine-brand p { color: #5b6390; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin: 4px 0 0; }
 
-        .form-control:focus { border-color: #f36b2e; box-shadow: 0 0 0 .2rem rgba(243, 107, 46, .16); }
+        .form-control:focus { border-color: #4361ee; box-shadow: 0 0 0 .2rem rgba(67, 97, 238, .2); }
 
         /* Botão Uiverse adaptado à paleta: pílula com salto no hover */
         .btn-cine {
-            background: #f36b2e; color: #fff; border: 1px solid #19244e;
+            background: #fbbf24; color: #1b2559; border: 1px solid #d97706;
             border-radius: 10em; font-weight: 600; padding: .6em 1.6em;
-            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 #19244e;
+            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 #1b2559;
         }
-        .btn-cine:hover { background: #f36b2e; color: #fff; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #19244e; }
-        .btn-cine:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #19244e; }
+        .btn-cine:hover { background: #fbbf24; color: #1b2559; transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 #1b2559; }
+        .btn-cine:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 #1b2559; }
     </style>
 </head>
 

@@ -11,24 +11,25 @@
 
     <style>
         :root {
-            --laranja: #f36b2e;
-            --manga: #f59a1e;
-            --agua: #c4e7e5;
-            --azul: #253c96;
-            --marinho: #19244e;
-            --ground: #c4e7e5;
+            --azul: #4361ee;
+            --azul-escuro: #2f48c9;
+            --lavanda: #c8d1ff;
+            --amarelo: #fbbf24;
+            --amarelo-escuro: #d97706;
+            --tinta: #1b2559;
+            --ground: #4361ee;
             --card: #ffffff;
-            --stripe: #eaf6f5;
-            --ink: #19244e;
-            --muted: #4a5580;
-            --line: #cfe3e2;
+            --stripe: #eef1ff;
+            --ink: #ffffff;
+            --muted: rgba(255, 255, 255, .8);
+            --line: #dfe4ff;
         }
 
         /* Plano de fundo em ondas (From Uiverse.io by romeo_3200) */
         body {
             background:
                 repeating-radial-gradient(circle at 0% 50%,
-                    rgba(0, 0, 0, .04) 0px, rgba(0, 0, 0, .04) 2px,
+                    rgba(255, 255, 255, .06) 0px, rgba(255, 255, 255, .06) 2px,
                     transparent 2px, transparent 30px),
                 var(--ground);
             background-attachment: fixed;
@@ -36,60 +37,61 @@
         }
 
         .navbar {
-            background: var(--marinho) !important;
-            border-bottom: 3px solid var(--laranja) !important;
-            box-shadow: 0 3px 14px -7px rgba(25, 36, 78, .55);
+            background: var(--azul) !important;
+            border-bottom: 3px solid var(--amarelo) !important;
         }
         .navbar .navbar-brand { color: #fff !important; font-weight: 700; letter-spacing: -.01em; }
-        .navbar .navbar-brand i { color: var(--laranja); }
+        .navbar .navbar-brand i { color: var(--amarelo); }
         .navbar .nav-link { color: rgba(255, 255, 255, .85) !important; }
-        .navbar .nav-link:hover { color: var(--manga) !important; }
+        .navbar .nav-link:hover { color: var(--amarelo) !important; }
         .navbar-text { color: rgba(255, 255, 255, .9) !important; }
+        .navbar .btn-outline-light, .navbar .btn-outline-light:hover { background: #fff; color: var(--tinta); border-color: #fff; }
 
         main.container { margin-top: 26px; }
         h3, h4 { color: var(--ink); font-weight: 700; }
-        a { color: var(--laranja); }
+        a { color: var(--amarelo); }
 
         /* ===== Cards com sombra sólida deslocada (efeito Uiverse) ===== */
         .card {
-            background: var(--card); color: var(--ink);
-            border: 2px solid var(--laranja); border-radius: 14px;
-            box-shadow: 6px 6px 0 var(--marinho); transition: all .2s ease;
+            background: var(--card); color: var(--tinta);
+            border: 2px solid var(--tinta); border-radius: 14px;
+            box-shadow: 6px 6px 0 var(--tinta); transition: all .2s ease;
         }
-        .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--marinho); }
+        .card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--tinta); }
 
         .table {
-            background: var(--card); color: var(--ink); border-radius: 12px; overflow: hidden;
-            box-shadow: 0 1px 2px rgba(28, 30, 42, .04), 0 14px 30px -20px rgba(28, 30, 42, .25);
+            background: var(--card); color: var(--tinta); border-radius: 12px; overflow: hidden;
+            box-shadow: 0 14px 30px -18px rgba(27, 37, 89, .5);
         }
         .table > :not(caption) > * > * { border-color: var(--line); }
         .table thead th { color: var(--azul); text-transform: uppercase; font-size: 12px; letter-spacing: .04em; }
         .table.table-striped > tbody > tr:nth-of-type(odd) > * { background: var(--stripe); }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--laranja); box-shadow: 0 0 0 .2rem rgba(243, 107, 46, .18);
+            border-color: var(--azul); box-shadow: 0 0 0 .2rem rgba(67, 97, 238, .25);
         }
 
         /* ===== Efeito Uiverse (pílula + "salto" no hover) em TODOS os botões ===== */
         .btn {
             border-radius: 10em; font-weight: 600; padding: .5em 1.4em;
-            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 var(--marinho);
+            transition: all .3s ease-in-out; box-shadow: 0 0 0 0 var(--tinta);
         }
-        .btn:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--marinho); }
-        .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--marinho); }
+        .btn:hover { transform: translateY(-4px) translateX(-2px); box-shadow: 2px 5px 0 0 var(--tinta); }
+        .btn:active { transform: translateY(2px) translateX(1px); box-shadow: 0 0 0 0 var(--tinta); }
         .btn-sm { padding: .3em 1em; }
 
-        .btn-success, .btn-primary { background: var(--laranja); color: #fff; border: 1px solid var(--marinho); }
-        .btn-success:hover, .btn-primary:hover { background: var(--laranja); color: #fff; border-color: var(--marinho); }
+        .btn-success, .btn-primary { background: var(--amarelo); color: var(--tinta); border: 1px solid var(--amarelo-escuro); }
+        .btn-success:hover, .btn-primary:hover { background: var(--amarelo); color: var(--tinta); border-color: var(--amarelo-escuro); }
         .btn-warning { background: transparent; border-color: var(--azul); color: var(--azul); }
         .btn-warning:hover { background: var(--azul); border-color: var(--azul); color: #fff; }
-        .btn-danger { background: var(--marinho); border-color: var(--marinho); color: #fff; }
-        .btn-danger:hover { background: var(--azul); border-color: var(--marinho); color: #fff; }
+        .btn-danger { background: var(--tinta); border-color: var(--tinta); color: #fff; }
+        .btn-danger:hover { background: var(--azul-escuro); border-color: var(--tinta); color: #fff; }
         .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .28); }
 
-        .page-link { color: var(--marinho); }
-        .page-link:hover { color: var(--laranja); }
-        .page-item.active .page-link { background: var(--laranja); border-color: var(--laranja); color: #fff; }
+        .page-link { color: var(--tinta); }
+        .page-link:hover { color: var(--azul); }
+        .page-item.active .page-link { background: var(--amarelo); border-color: var(--amarelo-escuro); color: var(--tinta); }
+        nav .small.text-muted { color: var(--muted) !important; }
     </style>
 </head>
 

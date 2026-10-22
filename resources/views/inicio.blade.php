@@ -9,16 +9,16 @@
         .pasta { position: relative; width: 210px; height: 150px; cursor: pointer; perspective: 1500px; }
 
         .pasta-fundo {
-            position: absolute; inset: 0; background: #f36b2e;
+            position: absolute; inset: 0; background: #d97706;
             border-radius: 16px; border-top-left-radius: 0; transition: all .3s ease;
         }
         .pasta-fundo::after {
             content: ''; position: absolute; bottom: 99%; left: 0; width: 70px; height: 16px;
-            background: #f36b2e; border-top-left-radius: 16px; border-top-right-radius: 16px;
+            background: #d97706; border-top-left-radius: 16px; border-top-right-radius: 16px;
         }
         .pasta-fundo::before {
             content: ''; position: absolute; top: -14px; left: 66px; width: 16px; height: 16px;
-            background: #f36b2e; clip-path: polygon(0 35%, 0 100%, 50% 100%);
+            background: #d97706; clip-path: polygon(0 35%, 0 100%, 50% 100%);
         }
 
         .papel { position: absolute; inset: 4px; border-radius: 16px; transition: all .3s ease; transform-origin: bottom; }
@@ -28,16 +28,16 @@
 
         .pasta-frente {
             position: absolute; bottom: 0; width: 100%; height: 146px;
-            background: linear-gradient(to top, #f59a1e, #f7b84b);
+            background: linear-gradient(to top, #f59e0b, #fbbf24);
             border-radius: 16px; border-top-right-radius: 0; transition: all .3s ease; transform-origin: bottom;
         }
         .pasta-frente::after {
             content: ''; position: absolute; bottom: 99%; right: 0; width: 128px; height: 16px;
-            background: #f7b84b; border-top-left-radius: 16px; border-top-right-radius: 16px;
+            background: #fbbf24; border-top-left-radius: 16px; border-top-right-radius: 16px;
         }
         .pasta-frente::before {
             content: ''; position: absolute; top: -9px; right: 124px; width: 12px; height: 12px;
-            background: #f7b84b; clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
+            background: #fbbf24; clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
         }
 
         .pasta:hover .papel-4 { transform: rotateX(-20deg); }
@@ -45,12 +45,12 @@
         .pasta:hover .papel-2 { transform: rotateX(-38deg); }
         .pasta:hover .pasta-frente {
             transform: rotateX(-46deg) translateY(1px);
-            box-shadow: inset 0 20px 40px #f7b84b, inset 0 -20px 40px #f36b2e;
+            box-shadow: inset 0 20px 40px #fbbf24, inset 0 -20px 40px #d97706;
         }
         .pasta:hover .pasta-fundo { box-shadow: 0 20px 40px rgba(0, 0, 0, .2); }
 
         .pasta-titulo { font-size: 1.5rem; padding-top: 1rem; margin: 0; font-weight: 600; }
-        .pasta-contagem { font-size: 1.1rem; opacity: .3; margin: 0; }
+        .pasta-contagem { font-size: 1.1rem; opacity: .7; margin: 0; }
     </style>
 
     <h3 class="mb-1">Bem-vindo, {{ session('usuario_nome', 'Administrador') }}</h3>
