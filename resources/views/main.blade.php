@@ -45,6 +45,18 @@
         .navbar .nav-link { color: rgba(255, 255, 255, .85) !important; }
         .navbar .nav-link:hover { color: var(--amarelo) !important; }
         .navbar .nav-link.active { color: var(--amarelo) !important; font-weight: 700; }
+
+        .navbar .dropdown-menu {
+            --bs-dropdown-bg: #fff;
+            --bs-dropdown-link-color: var(--tinta);
+            --bs-dropdown-link-hover-bg: var(--stripe);
+            --bs-dropdown-link-hover-color: var(--tinta);
+            --bs-dropdown-link-active-bg: var(--amarelo);
+            --bs-dropdown-link-active-color: var(--tinta);
+            --bs-dropdown-divider-bg: var(--line);
+            border: 2px solid var(--tinta); border-radius: 12px; box-shadow: 4px 4px 0 var(--tinta);
+        }
+        .navbar .dropdown-item i { width: 18px; color: var(--azul); }
         .navbar-text { color: rgba(255, 255, 255, .9) !important; }
         .navbar .btn-outline-light, .navbar .btn-outline-light:hover { background: #fff; color: var(--tinta); border-color: #fff; }
 
@@ -135,7 +147,7 @@
     </main>
 
     <footer class="rodape">
-        TapCine · Eric Zannini e Jasper Dearil · {{ date('Y') }}
+        TapCine · Eric Zannini e Gabriela Neckel · {{ date('Y') }}
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
