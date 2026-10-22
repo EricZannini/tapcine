@@ -32,7 +32,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
     <script>
-        // Gráfico de pizza — vendas de produtos
         new ApexCharts(document.querySelector("#graficoProdutos"), {
             chart: { type: 'pie', height: 330 },
             series: @json($produtoDados),
@@ -41,7 +40,6 @@
             legend: { position: 'bottom' }
         }).render();
 
-        // Gráfico de barra — notas dos filmes
         new ApexCharts(document.querySelector("#graficoFilmes"), {
             chart: { type: 'bar', height: 330 },
             series: [{ name: 'Nota', data: @json($filmeDados) }],
@@ -52,7 +50,6 @@
             dataLabels: { enabled: false }
         }).render();
 
-        // Gráfico de área — ingressos por dia
         new ApexCharts(document.querySelector("#graficoIngressos"), {
             chart: { type: 'area', height: 330 },
             series: [{ name: 'Ingressos', data: @json($ingressoDados) }],

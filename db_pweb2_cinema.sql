@@ -1,28 +1,56 @@
-/*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19-11.4.8-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_pweb2_cinema
+-- Host: 127.0.0.1    Database: db_pweb2_cinema
 -- ------------------------------------------------------
--- Server version	11.4.8-MariaDB
+-- Server version	8.4.3
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Current Database: `db_pweb2_cinema`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `db_pweb2_cinema` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `db_pweb2_cinema` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 USE `db_pweb2_cinema`;
+
+--
+-- Table structure for table `atores`
+--
+
+DROP TABLE IF EXISTS `atores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `atores` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nacionalidade` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `atores`
+--
+
+LOCK TABLES `atores` WRITE;
+/*!40000 ALTER TABLE `atores` DISABLE KEYS */;
+INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(5,'Robert Downey Jr.','Estados Unidos','1965-04-04','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL);
+/*!40000 ALTER TABLE `atores` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cache`
@@ -30,11 +58,11 @@ USE `db_pweb2_cinema`;
 
 DROP TABLE IF EXISTS `cache`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cache` (
-  `key` varchar(255) NOT NULL,
-  `value` mediumtext NOT NULL,
-  `expiration` bigint(20) NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` bigint NOT NULL,
   PRIMARY KEY (`key`),
   KEY `cache_expiration_index` (`expiration`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -55,11 +83,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cache_locks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cache_locks` (
-  `key` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
-  `expiration` bigint(20) NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` bigint NOT NULL,
   PRIMARY KEY (`key`),
   KEY `cache_locks_expiration_index` (`expiration`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -80,15 +108,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `failed_jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `failed_jobs` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) NOT NULL,
-  `connection` varchar(255) NOT NULL,
-  `queue` varchar(255) NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`),
   KEY `failed_jobs_connection_queue_failed_at_index` (`connection`,`queue`,`failed_at`)
@@ -110,13 +138,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `fichas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fichas` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `filme_id` bigint(20) unsigned NOT NULL,
-  `diretor` varchar(100) NOT NULL,
-  `ano` varchar(4) NOT NULL,
-  `sinopse` text DEFAULT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `filme_id` bigint unsigned NOT NULL,
+  `diretor` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ano` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sinopse` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -131,10 +159,7 @@ CREATE TABLE `fichas` (
 
 LOCK TABLES `fichas` WRITE;
 /*!40000 ALTER TABLE `fichas` DISABLE KEYS */;
-INSERT INTO `fichas` VALUES
-(1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-09-05 01:58:31','2026-09-05 01:58:31');
+INSERT INTO `fichas` VALUES (1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-10-23 01:17:15','2026-10-23 01:17:15'),(2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-10-23 01:17:15','2026-10-23 01:17:15'),(3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-10-23 01:17:15','2026-10-23 01:17:15');
 /*!40000 ALTER TABLE `fichas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,15 +169,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `filmes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `filmes` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(150) NOT NULL,
-  `genero` varchar(80) NOT NULL,
-  `duracao` varchar(20) NOT NULL,
-  `classificacao` varchar(10) NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `genero` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `duracao` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `classificacao` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nota` decimal(3,1) NOT NULL DEFAULT '0.0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -163,19 +190,7 @@ CREATE TABLE `filmes` (
 
 LOCK TABLES `filmes` WRITE;
 /*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
-INSERT INTO `filmes` VALUES
-(1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(7,'Backrooms','Terror','1h50','16+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(8,'Scarface','Ação e Aventura','2h50','18+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(10,'Dia D','Suspense','2h30','12+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(11,'Vingadores','Ação e Aventura','2h30','14+','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(12,'Vingadores 3','Super-Herói','1h30','12+','2026-09-05 01:58:31','2026-09-05 01:58:31');
+INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,8.2),(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,6.5),(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.0),(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.8),(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,8.0),(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.3),(7,'Backrooms','Terror','1h50','16+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,6.9),(8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,9.2),(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,6.0),(10,'Dia D','Suspense','2h30','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.5),(11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,9.0),(12,'Vingadores 3','Super-Herói','1h30','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,8.7);
 /*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,19 +200,20 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ingressos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ingressos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `sessao_id` bigint(20) unsigned NOT NULL,
-  `cliente_nome` varchar(100) NOT NULL,
-  `assento` varchar(10) NOT NULL,
-  `tipo_ingresso` varchar(30) NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `sessao_id` bigint unsigned NOT NULL,
+  `cliente_nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `assento` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo_ingresso` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `data_venda` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ingressos_sessao_id_foreign` (`sessao_id`),
   CONSTRAINT `ingressos_sessao_id_foreign` FOREIGN KEY (`sessao_id`) REFERENCES `sessoes` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,11 +222,7 @@ CREATE TABLE `ingressos` (
 
 LOCK TABLES `ingressos` WRITE;
 /*!40000 ALTER TABLE `ingressos` DISABLE KEYS */;
-INSERT INTO `ingressos` VALUES
-(1,1,'João Silva','A1','Inteira','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(2,2,'Maria Souza','B3','Meia','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(3,3,'Carlos Pereira','C5','Inteira','2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(4,4,'Eric Zannini','F6','Meia','2026-09-05 01:58:31','2026-09-05 01:58:31');
+INSERT INTO `ingressos` VALUES (1,3,'Ana Lima','B3','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(2,1,'Ana Lima','C4','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(3,1,'Júlia Alves','E3','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(4,1,'Carlos Pereira','B2','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(5,1,'Eric Zannini','C1','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-14'),(6,2,'Maria Souza','B5','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-14'),(7,1,'Júlia Alves','E2','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-15'),(8,3,'Ana Lima','D8','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-15'),(9,3,'Eric Zannini','F3','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-15'),(10,4,'Bruno Dias','F9','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(11,4,'João Silva','C1','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(12,2,'Eric Zannini','A7','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(13,4,'Pedro Rocha','C8','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(14,2,'Pedro Rocha','B5','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(15,2,'Bruno Dias','D8','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-17'),(16,3,'Júlia Alves','A6','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(17,1,'Ana Lima','C8','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(18,1,'Carlos Pereira','A10','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(19,1,'Maria Souza','D5','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(20,2,'Pedro Rocha','C2','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(21,4,'Carlos Pereira','D2','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(22,1,'Pedro Rocha','F9','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(23,3,'Bruno Dias','F6','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(24,1,'Maria Souza','B4','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(25,1,'Júlia Alves','E4','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(26,2,'Maria Souza','A2','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-20'),(27,2,'Carlos Pereira','E3','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(28,2,'Bruno Dias','D3','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(29,2,'João Silva','E3','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(30,2,'Bruno Dias','A5','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(31,2,'Pedro Rocha','C8','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(32,2,'Pedro Rocha','E10','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22'),(33,4,'Pedro Rocha','E4','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22'),(34,1,'João Silva','D5','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22'),(35,3,'Eric Zannini','E2','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22');
 /*!40000 ALTER TABLE `ingressos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,18 +232,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `job_batches`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `job_batches` (
-  `id` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `total_jobs` int(11) NOT NULL,
-  `pending_jobs` int(11) NOT NULL,
-  `failed_jobs` int(11) NOT NULL,
-  `failed_job_ids` longtext NOT NULL,
-  `options` mediumtext DEFAULT NULL,
-  `cancelled_at` int(11) DEFAULT NULL,
-  `created_at` int(11) NOT NULL,
-  `finished_at` int(11) DEFAULT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_jobs` int NOT NULL,
+  `pending_jobs` int NOT NULL,
+  `failed_jobs` int NOT NULL,
+  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext COLLATE utf8mb4_unicode_ci,
+  `cancelled_at` int DEFAULT NULL,
+  `created_at` int NOT NULL,
+  `finished_at` int DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -251,15 +263,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `jobs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `jobs` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `queue` varchar(255) NOT NULL,
-  `payload` longtext NOT NULL,
-  `attempts` smallint(5) unsigned NOT NULL,
-  `reserved_at` int(10) unsigned DEFAULT NULL,
-  `available_at` int(10) unsigned NOT NULL,
-  `created_at` int(10) unsigned NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` smallint unsigned NOT NULL,
+  `reserved_at` int unsigned DEFAULT NULL,
+  `available_at` int unsigned NOT NULL,
+  `created_at` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jobs_queue_index` (`queue`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -280,13 +292,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `migrations` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -295,15 +307,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES
-(1,'0001_01_01_000000_create_users_table',1),
-(2,'0001_01_01_000001_create_cache_table',1),
-(3,'0001_01_01_000002_create_jobs_table',1),
-(4,'2026_08_27_000001_create_filmes_table',1),
-(5,'2026_08_27_000002_create_sessoes_table',1),
-(6,'2026_08_27_000003_create_ingressos_table',1),
-(7,'2026_08_27_000004_create_usuarios_table',1),
-(8,'2026_09_04_000001_create_fichas_table',1);
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2026_08_27_000001_create_filmes_table',1),(5,'2026_08_27_000002_create_sessoes_table',1),(6,'2026_08_27_000003_create_ingressos_table',1),(7,'2026_08_27_000004_create_usuarios_table',1),(8,'2026_09_04_000001_create_fichas_table',1),(9,'2026_10_15_000001_create_atores_table',1),(10,'2026_10_15_000002_create_produtos_table',1),(11,'2026_10_16_000001_add_imagem_to_filmes_and_atores',1),(12,'2026_10_16_000002_add_campos_graficos',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,10 +317,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `password_reset_tokens`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -332,19 +336,48 @@ LOCK TABLES `password_reset_tokens` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `produtos`
+--
+
+DROP TABLE IF EXISTS `produtos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `produtos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categoria` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `preco` decimal(6,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `quantidade_vendida` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `produtos`
+--
+
+LOCK TABLES `produtos` WRITE;
+/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
+INSERT INTO `produtos` VALUES (1,'Pipoca Grande','Pipoca',25.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',120),(2,'Pipoca Média','Pipoca',20.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',95),(3,'Refrigerante 500ml','Bebida',12.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',150),(4,'Água Mineral','Bebida',7.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',60),(5,'Chocolate','Doce',10.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',80),(6,'Combo Casal','Combo',55.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',45);
+/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `sessions`
 --
 
 DROP TABLE IF EXISTS `sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
-  `user_id` bigint(20) unsigned DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
-  `last_activity` int(11) NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint unsigned DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sessions_user_id_index` (`user_id`),
   KEY `sessions_last_activity_index` (`last_activity`)
@@ -366,11 +399,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sessoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sessoes` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `filme_id` bigint(20) unsigned NOT NULL,
-  `sala` varchar(50) NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `filme_id` bigint unsigned NOT NULL,
+  `sala` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `data_sessao` date NOT NULL,
   `hora_inicio` time NOT NULL,
   `preco` decimal(6,2) NOT NULL,
@@ -388,11 +421,7 @@ CREATE TABLE `sessoes` (
 
 LOCK TABLES `sessoes` WRITE;
 /*!40000 ALTER TABLE `sessoes` DISABLE KEYS */;
-INSERT INTO `sessoes` VALUES
-(1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-09-05 01:58:31','2026-09-05 01:58:31'),
-(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-09-05 01:58:31','2026-09-05 01:58:31');
+INSERT INTO `sessoes` VALUES (1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-10-23 01:17:15','2026-10-23 01:17:15'),(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-10-23 01:17:15','2026-10-23 01:17:15'),(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-10-23 01:17:15','2026-10-23 01:17:15'),(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-10-23 01:17:15','2026-10-23 01:17:15');
 /*!40000 ALTER TABLE `sessoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -402,14 +431,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -432,14 +461,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
-  `telefone` varchar(20) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `login` varchar(50) NOT NULL,
-  `senha` varchar(255) NOT NULL,
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `login` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `senha` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -453,8 +482,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES
-(1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$jv8Gm3RNXCquejHlWsbmQed1jVnVR8.q.BxM2sY5at06j88brhMvO','2026-09-05 01:58:31','2026-09-05 01:58:31');
+INSERT INTO `usuarios` VALUES (1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$umUmMgZTGRut3TXUu43omunvgYggtfjAKDcL4kudMJ5fMT6Kx0ybu','2026-10-23 01:17:15','2026-10-23 01:17:15');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -465,6 +493,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-04 19:58:31
+-- Dump completed on 2026-10-22 19:17:54

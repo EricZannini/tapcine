@@ -15,7 +15,6 @@ class IngressoSeeder extends Seeder
         $clientes = ['João Silva', 'Maria Souza', 'Carlos Pereira', 'Eric Zannini', 'Ana Lima', 'Pedro Rocha', 'Júlia Alves', 'Bruno Dias'];
         $tipos = ['Inteira', 'Meia'];
 
-        // Gera vendas espalhadas nos últimos 10 dias (para o gráfico de área)
         for ($d = 9; $d >= 0; $d--) {
             $data = now()->subDays($d)->toDateString();
             $quantidade = rand(1, 5);
