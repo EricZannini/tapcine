@@ -48,8 +48,8 @@
                     <tr>
                         <th scope='row'>{{ $item->id }}</th>
                         <td>{{ $item->sala }}</td>
-                        <td>{{ $item->data_sessao }}</td>
-                        <td>{{ $item->hora_inicio }}</td>
+                        <td>{{ date('d/m/Y', strtotime($item->data_sessao)) }}</td>
+                        <td>{{ date('H:i', strtotime($item->hora_inicio)) }}</td>
                         <td>R$ {{ number_format($item->preco, 2, ',', '.') }}</td>
                         <td>
                             <a class='btn btn-warning' title='Editar' href="{{ route('sessao.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>

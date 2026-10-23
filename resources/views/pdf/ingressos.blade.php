@@ -27,7 +27,7 @@
                 <td>{{ $item->sessao->filme->titulo }}</td>
                 <td>{{ $item->assento }}</td>
                 <td>{{ $item->tipo_ingresso }}</td>
-                <td>{{ $item->data_venda }}</td>
+                <td>{{ date('d/m/Y', strtotime($item->data_venda)) }}</td>
             </tr>
         @endforeach
     </table>

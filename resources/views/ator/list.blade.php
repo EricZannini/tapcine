@@ -39,7 +39,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="mb-1">{{ $item->nome }}</h5>
                         <p class="text-muted small mb-2">{{ $item->nacionalidade }}</p>
-                        <p class="small mb-3">Nascimento: {{ \Carbon\Carbon::parse($item->data_nascimento)->format('d/m/Y') }}</p>
+                        <p class="small mb-3">Nascimento: {{ date('d/m/Y', strtotime($item->data_nascimento)) }}</p>
                         <div class="card-acoes mt-auto">
                             <a class="btn btn-warning" href="{{ route('ator.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
                             <form action="{{ route('ator.destroy', $item->id) }}" method="post">

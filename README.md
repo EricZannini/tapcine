@@ -8,8 +8,12 @@
 </p>
 
 
-## About this Project - Programação Web 2 com Laravel 2026.2
-Código-Fonte do Projeto desenvolvido durante as aulas de programação web 2 com PHP e Laravel no curso técnico integrado do IFSC 2026.2
+## TapCine - Programação Web 2 com Laravel 2026.2
+Sistema de gerenciamento de cinema desenvolvido nos Trabalhos Avaliativos 01 e 02 de Programação Web 2 (IFSC 2026.2).
+
+**Dupla:** Eric Zannini e Gabriela Neckel
+
+**Módulos:** Filmes (com pôster), Sessões (dentro de cada filme), Ingressos, Fichas técnicas, Atores (com foto) e Produtos, além de relatórios em PDF, gráficos e login.
 
 ## Quando baixar o projeto, o que fazer? 
 **1. Instalar as dependências do projeto**  
@@ -18,11 +22,14 @@ Código-Fonte do Projeto desenvolvido durante as aulas de programação web 2 co
 **2. copia e cola o .env.example e renomeia para .env**  
 `cp .env.example .env`  
 
-**3. Criar as tabelas do banco de dados do projeto**  
-`php artisan migrate` 
+**3. Criar o banco de dados do projeto**  
+Importar o script `db_pweb2_cinema.sql` (cria o banco `db_pweb2_cinema` com os dados)  
 
 **Ou criar as tabelas e insere os registros no banco de dados do projeto**  
 `php artisan migrate --seed` 
+
+**Criar o link das imagens (pôsteres e fotos)**  
+`php artisan storage:link` 
 
 **Se ainda apresentar erro 500, deve gerar a key do projeto**  
 `php artisan key:generate` 
@@ -31,7 +38,8 @@ Código-Fonte do Projeto desenvolvido durante as aulas de programação web 2 co
 `php artisan serve`
 
 **5. Acessar o sistema**  
-`http://localhost:8000/`
+`http://localhost:8000/`  
+Login: `admin` | Senha: `admin123`
 
 ----
 ## Diretorios mais usados do projeto

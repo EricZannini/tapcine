@@ -28,7 +28,7 @@
                     @foreach ($sessoes as $sessao)
                         <option value="{{ $sessao->id }}"
                             {{ old('sessao_id', $data->sessao_id ?? '') == $sessao->id ? 'selected' : '' }}>
-                            {{ $sessao->filme->titulo ?? 'Filme' }} - {{ $sessao->sala }} ({{ $sessao->data_sessao }} {{ $sessao->hora_inicio }})
+                            {{ $sessao->filme->titulo ?? 'Filme' }} - {{ $sessao->sala }} ({{ date('d/m/Y', strtotime($sessao->data_sessao)) }} {{ date('H:i', strtotime($sessao->hora_inicio)) }})
                         </option>
                     @endforeach
                 </select>
