@@ -45,6 +45,7 @@
                 @forelse ($dados as $item)
                     <tr>
                         <th scope='row'>{{ $item->id }}</th>
+                        {{-- 3 --}}
                         <td>{{ $item->filme->titulo ?? '-' }}</td>
                         <td>{{ $item->sala }}</td>
                         <td>{{ $item->data_sessao }}</td>

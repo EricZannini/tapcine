@@ -18,6 +18,7 @@ class Ficha extends Model
         'sinopse'
     ];
 
+    //3
     public function filme()
     {
         return $this->belongsTo(Filme::class);

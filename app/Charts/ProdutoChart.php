@@ -8,6 +8,7 @@ use ArielMejiaDev\LarapexCharts\LarapexChart;
 
 class ProdutoChart
 {
+    //4
     public function build(): \ArielMejiaDev\LarapexCharts\PieChart
     {
         $produtos = Produto::orderBy('quantidade_vendida', 'desc')->get();

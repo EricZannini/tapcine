@@ -13,6 +13,7 @@
         <h4><i class="fa-solid fa-user-tie"></i> Formulário Ator</h4>
         <div class="col-lg-8 px-0">
         <div class="card"><div class="card-body">
+        {{-- 1 --}}
         <form action="{{ $action }}" method="post" enctype="multipart/form-data">
             @csrf
             @if (!empty($data->id))

@@ -26,6 +26,7 @@
 
                         <div class="col-6 mb-2">
                             <label for="filme_id">Filme</label>
+                            {{-- 3 --}}
                             <select name="filme_id" class="form-select">
                                 <option value="">Selecione um filme</option>
                                 @foreach ($filmes as $filme)

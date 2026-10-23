@@ -19,11 +19,13 @@ class Filme extends Model
         'nota'
     ];
 
+    //3
     public function sessoes()
     {
         return $this->hasMany(Sessao::class);
     }
 
+    //3
     public function ficha()
     {
         return $this->hasOne(Ficha::class);

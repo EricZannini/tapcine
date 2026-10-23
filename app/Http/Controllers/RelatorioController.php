@@ -8,6 +8,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class RelatorioController extends Controller
 {
+    //5
     public function produtos()
     {
         $dados = Produto::orderBy('nome')->get();

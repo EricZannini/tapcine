@@ -51,6 +51,7 @@ class FilmeController extends Controller
 
         if ($poster) {
             $nome_imagem = date('YmdHis') . "." . $poster->getClientOriginalExtension();
+            //1
             $poster->storeAs("imagem/filme", $nome_imagem, 'public');
             $data['poster'] = "imagem/filme/" . $nome_imagem;
         }

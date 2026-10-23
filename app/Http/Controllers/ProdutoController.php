@@ -19,6 +19,7 @@ class ProdutoController extends Controller
         return view('produto.form');
     }
 
+    //2
     function validateForm(Request $request)
     {
         $request->validate([
@@ -68,6 +69,7 @@ class ProdutoController extends Controller
         return redirect('produto')->with("success", 'Produto removido com sucesso!');
     }
 
+    //2
     public function search(Request $request)
     {
         if (!empty($request->valor)) {
