@@ -12,7 +12,7 @@
 
         <h4><i class="fa-solid fa-user-tie"></i> Formulário Ator</h4>
         <div class="col-lg-8 px-0">
-        <div class="card"><div class="card-body">
+        <div class="card"><div class="card-body position-relative">
         {{-- 1 --}}
         <form action="{{ $action }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -47,6 +47,9 @@
                 <a href="{{ url('ator') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
             </div>
         </form>
+        <div class="d-none d-lg-block" style="position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%);">
+            @include('partials.lapis')
+        </div>
         </div></div></div>
     </div>
 @stop
