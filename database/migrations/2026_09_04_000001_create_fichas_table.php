@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('fichas', function (Blueprint $table) {
             $table->id();
-            //3
             $table->foreignId('filme_id')->unique()->constrained('filmes')->onDelete('cascade');
             $table->string('diretor', 100);
             $table->string('ano', 4);

@@ -46,7 +46,6 @@ class AtorController extends Controller
 
         if ($foto) {
             $nome_imagem = date('YmdHis') . "." . $foto->getClientOriginalExtension();
-            //1
             $foto->storeAs("imagem/ator", $nome_imagem, 'public');
             $data['foto'] = "imagem/ator/" . $nome_imagem;
         }
@@ -73,7 +72,6 @@ class AtorController extends Controller
 
         if ($foto) {
             if ($ator->foto) {
-                //1
                 Storage::disk('public')->delete($ator->foto);
             }
             $nome_imagem = date('YmdHis') . "." . $foto->getClientOriginalExtension();
@@ -91,7 +89,6 @@ class AtorController extends Controller
         $ator = Ator::find($id);
 
         if ($ator->foto) {
-            //1
             Storage::disk('public')->delete($ator->foto);
         }
 

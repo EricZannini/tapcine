@@ -8,7 +8,6 @@ use App\Charts\IngressoChart;
 
 class GraficoController extends Controller
 {
-    //4
     public function index(ProdutoChart $produtoChart, NotaFilmeChart $notaFilmeChart, IngressoChart $ingressoChart)
     {
         return view('grafico.index', [

@@ -62,9 +62,6 @@
             @include('partials.pasta', ['titulo' => 'Filmes', 'contagem' => $totalFilmes, 'link' => url('filme')])
         </div>
         <div class="col-md-4">
-            @include('partials.pasta', ['titulo' => 'Sessões', 'contagem' => $totalSessoes, 'link' => url('filme')])
-        </div>
-        <div class="col-md-4">
             @include('partials.pasta', ['titulo' => 'Ingressos', 'contagem' => $totalIngressos, 'link' => url('ingresso')])
         </div>
         <div class="col-md-4">

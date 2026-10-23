@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    {{-- 5 --}}
     <h2>Relatório de Produtos</h2>
 
     <table>

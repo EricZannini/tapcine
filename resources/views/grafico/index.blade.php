@@ -7,7 +7,6 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    {{-- 4 --}}
                     {!! $produtoChart->container() !!}
                 </div>
             </div>
@@ -30,7 +29,6 @@
 
     <script src="{{ $produtoChart->cdn() }}"></script>
 
-    {{-- 4 --}}
     {{ $produtoChart->script() }}
     {{ $notaFilmeChart->script() }}
     {{ $ingressoChart->script() }}

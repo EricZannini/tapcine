@@ -4,7 +4,6 @@
     <div class="row">
 
         <h3><i class="fa-solid fa-clock"></i> Sessões</h3>
-        {{-- 3 --}}
         <h5>Filme: {{ $filme->titulo }}</h5>
         <form action="{{ route('sessao.search') }}" method="post">
             @csrf
