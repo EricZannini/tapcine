@@ -7,7 +7,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="mb-3">Vendas da Bomboniere</h5>
+                    <h5 class="mb-3">Vendas de Produtos</h5>
                     <div id="graficoProdutos"></div>
                 </div>
             </div>

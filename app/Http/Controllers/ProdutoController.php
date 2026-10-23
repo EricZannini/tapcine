@@ -31,6 +31,8 @@ class ProdutoController extends Controller
             'categoria.required' => 'A :attribute é obrigatoria',
             'preco.required' => 'O :attribute é obrigatorio',
             'preco.numeric' => 'O :attribute deve ser um número',
+            'quantidade_vendida.integer' => 'A quantidade vendida deve ser um número inteiro',
+            'quantidade_vendida.min' => 'A quantidade vendida não pode ser negativa',
         ]);
     }
 

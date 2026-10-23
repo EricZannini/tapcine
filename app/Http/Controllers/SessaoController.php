@@ -32,10 +32,13 @@ class SessaoController extends Controller
             'preco' => 'required|numeric',
         ], [
             'filme_id.required' => "O filme é obrigatorio",
+            'filme_id.exists' => "O filme selecionado não existe",
             'sala.required' => "A :attribute é obrigatoria",
             'data_sessao.required' => "A data é obrigatoria",
+            'data_sessao.date' => "A data deve ser válida",
             'hora_inicio.required' => "A hora é obrigatoria",
             'preco.required' => "O :attribute é obrigatorio",
+            'preco.numeric' => "O :attribute deve ser um número",
         ]);
     }
 

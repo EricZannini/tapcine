@@ -26,12 +26,13 @@ class AtorController extends Controller
         $request->validate([
             'nome' => 'required',
             'nacionalidade' => 'required',
-            'data_nascimento' => 'required',
+            'data_nascimento' => 'required|date',
             'foto' => 'nullable|image|mimes:png,jpg,jpeg',
         ], [
             'nome.required' => 'O :attribute é obrigatorio',
             'nacionalidade.required' => 'A :attribute é obrigatoria',
             'data_nascimento.required' => 'A :attribute é obrigatoria',
+            'data_nascimento.date' => 'A :attribute deve ser uma data válida',
             'foto.image' => 'A :attribute deve ser uma imagem',
             'foto.mimes' => 'A :attribute deve ser PNG, JPG ou JPEG',
         ]);

@@ -37,6 +37,9 @@ class FilmeController extends Controller
             'classificacao.required' => "A :attribute é obrigatoria",
             'poster.image' => "O :attribute deve ser uma imagem",
             'poster.mimes' => "O :attribute deve ser PNG, JPG ou JPEG",
+            'nota.numeric' => "A :attribute deve ser um número",
+            'nota.min' => "A :attribute deve ser no mínimo 0",
+            'nota.max' => "A :attribute deve ser no máximo 10",
         ]);
     }
 

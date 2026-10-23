@@ -31,6 +31,7 @@ class IngressoController extends Controller
             'tipo_ingresso' => 'required',
         ], [
             'sessao_id.required' => "A sessão é obrigatoria",
+            'sessao_id.exists' => "A sessão selecionada não existe",
             'cliente_nome.required' => "O nome do cliente é obrigatorio",
             'assento.required' => "O :attribute é obrigatorio",
             'tipo_ingresso.required' => "O tipo de ingresso é obrigatorio",

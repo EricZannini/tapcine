@@ -27,12 +27,14 @@ class FichaController extends Controller
         $request->validate([
             'filme_id' => 'required|exists:filmes,id|unique:fichas,filme_id,' . $id,
             'diretor' => 'required',
-            'ano' => 'required',
+            'ano' => 'required|numeric',
         ], [
             'filme_id.required' => 'O filme é obrigatorio',
+            'filme_id.exists' => 'O filme selecionado não existe',
             'filme_id.unique' => 'Esse filme já possui uma ficha técnica',
             'diretor.required' => 'O :attribute é obrigatorio',
             'ano.required' => 'O :attribute é obrigatorio',
+            'ano.numeric' => 'O :attribute deve ser um número',
         ]);
     }
 
