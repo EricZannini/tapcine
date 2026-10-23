@@ -41,14 +41,19 @@
                         <h5 class="mb-1">{{ $item->titulo }}</h5>
                         <p class="text-muted small mb-2">{{ $item->genero }}</p>
                         <p class="small mb-3">{{ $item->duracao }} · {{ $item->classificacao }} · Nota {{ $item->nota }}</p>
-                        <div class="card-acoes mt-auto">
-                            <a class="btn btn-warning" href="{{ route('filme.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
-                            <form action="{{ route('filme.destroy', $item->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger"
-                                    onclick="return confirm('Deseja Excluir?')"><i class="fa-solid fa-trash"></i> Deletar</button>
-                            </form>
+                        <div class="mt-auto">
+                            <div class="card-acoes mb-2">
+                                <a class="btn btn-primary" href="{{ route('filme.sessoes', $item->id) }}"><i class="fa-solid fa-clock"></i> Sessões {{ $item->sessoes->count() }}</a>
+                            </div>
+                            <div class="card-acoes">
+                                <a class="btn btn-warning" href="{{ route('filme.edit', $item->id) }}"><i class="fa-solid fa-pen"></i> Editar</a>
+                                <form action="{{ route('filme.destroy', $item->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"
+                                        onclick="return confirm('Deseja Excluir?')"><i class="fa-solid fa-trash"></i> Deletar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

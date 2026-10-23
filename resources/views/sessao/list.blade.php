@@ -4,8 +4,11 @@
     <div class="row">
 
         <h3><i class="fa-solid fa-clock"></i> Sessões</h3>
+        {{-- 3 --}}
+        <h5>Filme: {{ $filme->titulo }}</h5>
         <form action="{{ route('sessao.search') }}" method="post">
             @csrf
+            <input type="hidden" name="filme_id" value="{{ $filme->id }}">
             <div class="row align-items-end">
                 <div class="col-2">
                     <label for="tipo">Tipo</label>
@@ -20,7 +23,8 @@
                 </div>
                 <div class="col-5">
                     <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
-                    <a href="{{ url('sessao/create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Novo</a>
+                    <a href="{{ route('filme.sessoes.create', $filme->id) }}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Novo</a>
+                    <a href="{{ url('filme') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
                 </div>
             </div>
         </form>
@@ -32,7 +36,6 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Filme</th>
                     <th scope="col">Sala</th>
                     <th scope="col">Data</th>
                     <th scope="col">Hora</th>
@@ -45,8 +48,6 @@
                 @forelse ($dados as $item)
                     <tr>
                         <th scope='row'>{{ $item->id }}</th>
-                        {{-- 3 --}}
-                        <td>{{ $item->filme->titulo ?? '-' }}</td>
                         <td>{{ $item->sala }}</td>
                         <td>{{ $item->data_sessao }}</td>
                         <td>{{ $item->hora_inicio }}</td>
@@ -65,7 +66,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="8" class="text-center text-muted py-4">Nenhum registro encontrado.</td>
+                        <td colspan="7" class="text-center text-muted py-4">Nenhum registro encontrado.</td>
                     </tr>
                 @endforelse
             </tbody>

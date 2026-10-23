@@ -32,8 +32,8 @@ Route::middleware('autenticado')->group(function () {
     Route::delete('/filme/{id}', [FilmeController::class, 'destroy'])->name('filme.destroy');
     Route::post('/filme/search', [FilmeController::class, 'search'])->name('filme.search');
 
-    Route::get('/sessao', [SessaoController::class, 'index']);
-    Route::get('/sessao/create', [SessaoController::class, 'create']);
+    Route::get('/filme/{filme}/sessoes', [SessaoController::class, 'index'])->name('filme.sessoes');
+    Route::get('/filme/{filme}/sessoes/create', [SessaoController::class, 'create'])->name('filme.sessoes.create');
     Route::post('/sessao/store', [SessaoController::class, 'store'])->name('sessao.store');
     Route::get('/sessao/edit/{id}', [SessaoController::class, 'edit'])->name('sessao.edit');
     Route::put('/sessao/update/{id}', [SessaoController::class, 'update'])->name('sessao.update');

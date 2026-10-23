@@ -13,8 +13,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle {{ request()->is('filme*', 'sessao*', 'ficha*', 'ator*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-film"></i> Cinema</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item {{ request()->is('filme*') ? 'active' : '' }}" href="{{ url('filme') }}"><i class="fa-solid fa-film"></i> Filmes</a></li>
-            <li><a class="dropdown-item {{ request()->is('sessao*') ? 'active' : '' }}" href="{{ url('sessao') }}"><i class="fa-solid fa-clock"></i> Sessões</a></li>
+            <li><a class="dropdown-item {{ request()->is('filme*', 'sessao*') ? 'active' : '' }}" href="{{ url('filme') }}"><i class="fa-solid fa-film"></i> Filmes</a></li>
             <li><a class="dropdown-item {{ request()->is('ficha*') ? 'active' : '' }}" href="{{ url('ficha') }}"><i class="fa-solid fa-clipboard-list"></i> Fichas</a></li>
             <li><a class="dropdown-item {{ request()->is('ator*') ? 'active' : '' }}" href="{{ url('ator') }}"><i class="fa-solid fa-user-tie"></i> Atores</a></li>
           </ul>

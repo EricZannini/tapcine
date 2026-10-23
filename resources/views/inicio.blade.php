@@ -4,7 +4,7 @@
     <style>
         .muted-2 { color: var(--muted); }
 
-        /* Pasta animada (From Uiverse.io - reimplementado em CSS) */
+        /* Pasta animada (From Uiverse.io By Copb) */
         .pasta-card { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--ink); }
         .pasta { position: relative; width: 210px; height: 150px; cursor: pointer; perspective: 1500px; }
 
@@ -62,7 +62,7 @@
             @include('partials.pasta', ['titulo' => 'Filmes', 'contagem' => $totalFilmes, 'link' => url('filme')])
         </div>
         <div class="col-md-4">
-            @include('partials.pasta', ['titulo' => 'Sessões', 'contagem' => $totalSessoes, 'link' => url('sessao')])
+            @include('partials.pasta', ['titulo' => 'Sessões', 'contagem' => $totalSessoes, 'link' => url('filme')])
         </div>
         <div class="col-md-4">
             @include('partials.pasta', ['titulo' => 'Ingressos', 'contagem' => $totalIngressos, 'link' => url('ingresso')])

@@ -8,18 +8,19 @@ use App\Models\Filme;
 
 class SessaoController extends Controller
 {
-    public function index()
+    public function index(Filme $filme)
     {
-        $dados = Sessao::with('filme')->get();
+        $dados = $filme->sessoes;
 
-        return view('sessao.list')->with(['dados' => $dados]);
+        return view('sessao.list')->with([
+            'dados' => $dados,
+            'filme' => $filme,
+        ]);
     }
 
-    function create()
+    function create(Filme $filme)
     {
-        $filmes = Filme::all();
-
-        return view('sessao.form', compact('filmes'));
+        return view('sessao.form', compact('filme'));
     }
 
     function validateForm(Request $request)
@@ -46,17 +47,17 @@ class SessaoController extends Controller
     {
         $this->validateForm($request);
 
-        Sessao::create($request->all());
+        $sessao = Sessao::create($request->all());
 
-        return redirect('sessao')->with("success", 'Sessão salva com sucesso!');
+        return redirect()->route('filme.sessoes', $sessao->filme_id)->with("success", 'Sessão salva com sucesso!');
     }
 
     function edit($id)
     {
         $data = Sessao::find($id);
-        $filmes = Filme::all();
+        $filme = Filme::find($data->filme_id);
 
-        return view('sessao.form', compact('data', 'filmes'));
+        return view('sessao.form', compact('data', 'filme'));
     }
 
     function update(Request $request, $id)
@@ -65,28 +66,32 @@ class SessaoController extends Controller
 
         Sessao::find($id)->update($request->all());
 
-        return redirect('sessao')->with("success", 'Sessão atualizada com sucesso!');
+        return redirect()->route('filme.sessoes', $request->filme_id)->with("success", 'Sessão atualizada com sucesso!');
     }
 
     function destroy($id)
     {
+        $data = Sessao::find($id);
+
         Sessao::destroy($id);
 
-        return redirect('sessao')->with("success", 'Sessão removida com sucesso!');
+        return redirect()->route('filme.sessoes', $data->filme_id)->with("success", 'Sessão removida com sucesso!');
     }
 
     public function search(Request $request)
     {
+        $filme = Filme::find($request->filme_id);
+
         if (!empty($request->valor)) {
-            $dados = Sessao::with('filme')->where(
+            $dados = Sessao::where('filme_id', $filme->id)->where(
                 $request->tipo,
                 'like',
                 "%$request->valor%"
             )->get();
         } else {
-            $dados = Sessao::with('filme')->get();
+            $dados = $filme->sessoes;
         }
 
-        return view('sessao.list', compact('dados'));
+        return view('sessao.list', compact('dados', 'filme'));
     }
 }
