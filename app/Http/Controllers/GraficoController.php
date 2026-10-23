@@ -2,37 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Filme;
-use App\Models\Produto;
-use App\Models\Ingresso;
+use App\Charts\ProdutoChart;
+use App\Charts\NotaFilmeChart;
+use App\Charts\IngressoChart;
 
 class GraficoController extends Controller
 {
-    public function index()
+    public function index(ProdutoChart $produtoChart, NotaFilmeChart $notaFilmeChart, IngressoChart $ingressoChart)
     {
-        $produtos = Produto::orderBy('quantidade_vendida', 'desc')->get();
-        $produtoLabels = $produtos->pluck('nome');
-        $produtoDados = $produtos->pluck('quantidade_vendida');
-
-        $filmes = Filme::orderBy('nota', 'desc')->get();
-        $filmeLabels = $filmes->pluck('titulo');
-        $filmeDados = $filmes->pluck('nota')->map(fn($n) => (float) $n);
-
-        $ingressos = Ingresso::selectRaw('data_venda, COUNT(*) as total')
-            ->whereNotNull('data_venda')
-            ->groupBy('data_venda')
-            ->orderBy('data_venda')
-            ->get();
-        $ingressoLabels = $ingressos->pluck('data_venda')->map(fn($d) => \Carbon\Carbon::parse($d)->format('d/m'));
-        $ingressoDados = $ingressos->pluck('total');
-
-        return view('grafico.index', compact(
-            'produtoLabels',
-            'produtoDados',
-            'filmeLabels',
-            'filmeDados',
-            'ingressoLabels',
-            'ingressoDados'
-        ));
+        return view('grafico.index', [
+            'produtoChart' => $produtoChart->build(),
+            'notaFilmeChart' => $notaFilmeChart->build(),
+            'ingressoChart' => $ingressoChart->build(),
+        ]);
     }
 }
