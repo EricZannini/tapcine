@@ -10,8 +10,7 @@ class FilmeController extends Controller
 {
     public function index()
     {
-        // 12 por página = 3 linhas de 4 cards
-        $dados = Filme::paginate(12);
+        $dados = Filme::all();
 
         return view('filme.list')->with(['dados' => $dados]);
     }

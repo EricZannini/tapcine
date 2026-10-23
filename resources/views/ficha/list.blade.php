@@ -65,8 +65,5 @@
                 @endforelse
             </tbody>
         </table>
-        @if (method_exists($dados, 'links'))
-            {{ $dados->links() }}
-        @endif
     </div>
 @stop

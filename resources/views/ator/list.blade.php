@@ -68,8 +68,4 @@
         @endforelse
     </div>
 
-    {{-- só a listagem normal usa paginate(); a busca retorna tudo, então não tem links() --}}
-    @if (method_exists($dados, 'links'))
-        <div class="mt-4">{{ $dados->links() }}</div>
-    @endif
 @stop

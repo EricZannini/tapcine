@@ -110,10 +110,6 @@
         .btn-danger:hover { background: var(--vermelho-escuro); border-color: var(--tinta); color: var(--baunilha); }
         .navbar .btn:hover { box-shadow: 2px 5px 0 0 rgba(0, 0, 0, .25); }
 
-        .page-link { color: var(--vermelho); }
-        .page-link:hover { color: var(--vermelho-escuro); }
-        .page-item.active .page-link { background: var(--vermelho); border-color: var(--vermelho); color: var(--baunilha); }
-        nav .small.text-muted { color: var(--muted) !important; }
     </style>
 </head>
 
