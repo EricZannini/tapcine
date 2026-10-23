@@ -39,7 +39,7 @@ CREATE TABLE `atores` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +134,7 @@ CREATE TABLE `filmes` (
   `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nota` decimal(3,1) NOT NULL DEFAULT '0.0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,7 +289,7 @@ CREATE TABLE `sessoes` (
   PRIMARY KEY (`id`),
   KEY `sessoes_filme_id_foreign` (`filme_id`),
   CONSTRAINT `sessoes_filme_id_foreign` FOREIGN KEY (`filme_id`) REFERENCES `filmes` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -343,7 +343,7 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-23  0:27:53
+-- Dump completed on 2026-10-23 19:14:12
 -- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: db_pweb2_cinema
@@ -367,7 +367,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `atores` WRITE;
 /*!40000 ALTER TABLE `atores` DISABLE KEYS */;
-INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/tom-hanks.jpg'),(2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/fernanda-montenegro.jpg'),(3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/scarlett-johansson.jpg'),(4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/wagner-moura.jpg'),(5,'Robert Downey Jr.','Estados Unidos','1965-04-04','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/robert-downey-jr.jpg');
+INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/tom-hanks.jpg'),(2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/fernanda-montenegro.jpg'),(3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/scarlett-johansson.jpg'),(4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/wagner-moura.jpg'),(8,'Jackson','Brasileira','1932-10-03','2026-10-23 20:19:08','2026-10-23 20:19:08','imagem/ator/20261023171907.jpg');
 /*!40000 ALTER TABLE `atores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -405,7 +405,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `filmes` WRITE;
 /*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
-INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/super-mario-galaxy.jpg',8.2),(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/crepusculo.jpg',6.5),(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/cara-de-um-focinho-de-outro.jpg',7.0),(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/panico-7.jpg',7.8),(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/devoradores-de-estrelas.jpg',8.0),(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/velhos-bandidos.jpg',7.3),(7,'Backrooms','Terror','1h50','16+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/backrooms.jpg',6.9),(8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/scarface.jpg',9.2),(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/todo-mundo-em-panico-6.jpg',6.0),(10,'Dia D','Suspense','2h30','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/dia-d.jpg',7.5),(11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/vingadores.jpg',9.0),(12,'Vingadores: Guerra Infinita','Super-Herói','1h30','12+','2026-10-23 01:54:23','2026-10-23 01:56:44','imagem/filme/vingadores-3.jpg',8.7);
+INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/super-mario-galaxy.jpg',8.2),(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/crepusculo.jpg',6.5),(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/cara-de-um-focinho-de-outro.jpg',7.0),(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/panico-7.jpg',7.8),(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/devoradores-de-estrelas.jpg',8.0),(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/velhos-bandidos.jpg',7.3),(7,'Backrooms','Terror','1h50','16+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/backrooms.jpg',6.9),(8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/scarface.jpg',9.2),(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/todo-mundo-em-panico-6.jpg',6.0),(10,'Dia D','Suspense','2h30','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/dia-d.jpg',7.5),(11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/vingadores.jpg',9.0),(12,'Vingadores: Guerra Infinita','Super-Herói','1h30','12+','2026-10-23 01:54:23','2026-10-23 01:56:44','imagem/filme/vingadores-3.jpg',8.7),(14,'Django Livre','cxzcz','1h30','12','2026-10-23 20:31:07','2026-10-23 20:31:20','imagem/filme/20261023173120.jpg',1.4);
 /*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -504,4 +504,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-23  0:27:53
+-- Dump completed on 2026-10-23 19:14:12
