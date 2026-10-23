@@ -39,7 +39,7 @@ CREATE TABLE `atores` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +134,7 @@ CREATE TABLE `filmes` (
   `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nota` decimal(3,1) NOT NULL DEFAULT '0.0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -247,7 +247,7 @@ CREATE TABLE `produtos` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `quantidade_vendida` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -343,7 +343,7 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-23 19:14:12
+-- Dump completed on 2026-10-23 20:02:05
 -- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: db_pweb2_cinema
@@ -367,7 +367,11 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `atores` WRITE;
 /*!40000 ALTER TABLE `atores` DISABLE KEYS */;
-INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/tom-hanks.jpg'),(2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/fernanda-montenegro.jpg'),(3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/scarlett-johansson.jpg'),(4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/wagner-moura.jpg'),(8,'Jackson','Brasileira','1932-10-03','2026-10-23 20:19:08','2026-10-23 20:19:08','imagem/ator/20261023171907.jpg');
+INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/tom-hanks.jpg');
+INSERT INTO `atores` VALUES (2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/fernanda-montenegro.jpg');
+INSERT INTO `atores` VALUES (3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/scarlett-johansson.jpg');
+INSERT INTO `atores` VALUES (4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/wagner-moura.jpg');
+INSERT INTO `atores` VALUES (8,'Jackson','Brasileira','1932-10-03','2026-10-23 20:19:08','2026-10-23 20:19:08','imagem/ator/20261023171907.jpg');
 /*!40000 ALTER TABLE `atores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,7 +399,9 @@ UNLOCK TABLES;
 
 LOCK TABLES `fichas` WRITE;
 /*!40000 ALTER TABLE `fichas` DISABLE KEYS */;
-INSERT INTO `fichas` VALUES (1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-10-23 01:54:23','2026-10-23 01:54:23'),(2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-10-23 01:54:23','2026-10-23 01:54:23'),(3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `fichas` VALUES (1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `fichas` VALUES (2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `fichas` VALUES (3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-10-23 01:54:23','2026-10-23 01:54:23');
 /*!40000 ALTER TABLE `fichas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -405,7 +411,19 @@ UNLOCK TABLES;
 
 LOCK TABLES `filmes` WRITE;
 /*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
-INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/super-mario-galaxy.jpg',8.2),(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/crepusculo.jpg',6.5),(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/cara-de-um-focinho-de-outro.jpg',7.0),(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/panico-7.jpg',7.8),(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/devoradores-de-estrelas.jpg',8.0),(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/velhos-bandidos.jpg',7.3),(7,'Backrooms','Terror','1h50','16+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/backrooms.jpg',6.9),(8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/scarface.jpg',9.2),(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/todo-mundo-em-panico-6.jpg',6.0),(10,'Dia D','Suspense','2h30','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/dia-d.jpg',7.5),(11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/vingadores.jpg',9.0),(12,'Vingadores: Guerra Infinita','Super-Herói','1h30','12+','2026-10-23 01:54:23','2026-10-23 01:56:44','imagem/filme/vingadores-3.jpg',8.7),(14,'Django Livre','cxzcz','1h30','12','2026-10-23 20:31:07','2026-10-23 20:31:20','imagem/filme/20261023173120.jpg',1.4);
+INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/super-mario-galaxy.jpg',8.2);
+INSERT INTO `filmes` VALUES (2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/crepusculo.jpg',6.5);
+INSERT INTO `filmes` VALUES (3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/cara-de-um-focinho-de-outro.jpg',7.0);
+INSERT INTO `filmes` VALUES (4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/panico-7.jpg',7.8);
+INSERT INTO `filmes` VALUES (5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/devoradores-de-estrelas.jpg',8.0);
+INSERT INTO `filmes` VALUES (6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/velhos-bandidos.jpg',7.3);
+INSERT INTO `filmes` VALUES (7,'Backrooms','Terror','1h50','16+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/backrooms.jpg',6.9);
+INSERT INTO `filmes` VALUES (8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/scarface.jpg',9.2);
+INSERT INTO `filmes` VALUES (9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/todo-mundo-em-panico-6.jpg',6.0);
+INSERT INTO `filmes` VALUES (10,'Dia D','Suspense','2h30','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/dia-d.jpg',7.5);
+INSERT INTO `filmes` VALUES (11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/vingadores.jpg',9.0);
+INSERT INTO `filmes` VALUES (12,'Vingadores: Guerra Infinita','Super-Herói','1h30','12+','2026-10-23 01:54:23','2026-10-23 01:56:44','imagem/filme/vingadores-3.jpg',8.7);
+INSERT INTO `filmes` VALUES (14,'Django Livre','cxzcz','1h30','12','2026-10-23 20:31:07','2026-10-23 20:31:20','imagem/filme/20261023173120.jpg',1.4);
 /*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -415,7 +433,31 @@ UNLOCK TABLES;
 
 LOCK TABLES `ingressos` WRITE;
 /*!40000 ALTER TABLE `ingressos` DISABLE KEYS */;
-INSERT INTO `ingressos` VALUES (1,3,'Carlos Pereira','B10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-13'),(2,4,'João Silva','F7','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-14'),(3,1,'Júlia Alves','F2','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-15'),(4,3,'Júlia Alves','F8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-15'),(5,3,'Ana Lima','F10','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16'),(6,2,'Ana Lima','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16'),(7,1,'Carlos Pereira','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16'),(8,2,'Pedro Rocha','B1','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(9,3,'Bruno Dias','D8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(10,4,'Júlia Alves','E2','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(11,2,'Eric Zannini','F10','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(12,4,'João Silva','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(13,4,'Júlia Alves','B10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18'),(14,2,'Júlia Alves','A9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18'),(15,4,'Júlia Alves','B9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18'),(16,1,'Júlia Alves','E1','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-19'),(17,4,'Bruno Dias','F3','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-19'),(18,4,'Carlos Pereira','E3','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(19,2,'Ana Lima','A4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(20,4,'Carlos Pereira','E4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(21,3,'Ana Lima','C7','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(22,1,'Carlos Pereira','B2','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-21'),(23,1,'Ana Lima','B4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22'),(24,4,'Eric Zannini','E9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22'),(25,1,'Júlia Alves','F10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22');
+INSERT INTO `ingressos` VALUES (1,3,'Carlos Pereira','B10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-13');
+INSERT INTO `ingressos` VALUES (2,4,'João Silva','F7','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-14');
+INSERT INTO `ingressos` VALUES (3,1,'Júlia Alves','F2','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-15');
+INSERT INTO `ingressos` VALUES (4,3,'Júlia Alves','F8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-15');
+INSERT INTO `ingressos` VALUES (5,3,'Ana Lima','F10','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16');
+INSERT INTO `ingressos` VALUES (6,2,'Ana Lima','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16');
+INSERT INTO `ingressos` VALUES (7,1,'Carlos Pereira','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16');
+INSERT INTO `ingressos` VALUES (8,2,'Pedro Rocha','B1','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17');
+INSERT INTO `ingressos` VALUES (9,3,'Bruno Dias','D8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17');
+INSERT INTO `ingressos` VALUES (10,4,'Júlia Alves','E2','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17');
+INSERT INTO `ingressos` VALUES (11,2,'Eric Zannini','F10','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17');
+INSERT INTO `ingressos` VALUES (12,4,'João Silva','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17');
+INSERT INTO `ingressos` VALUES (13,4,'Júlia Alves','B10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18');
+INSERT INTO `ingressos` VALUES (14,2,'Júlia Alves','A9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18');
+INSERT INTO `ingressos` VALUES (15,4,'Júlia Alves','B9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18');
+INSERT INTO `ingressos` VALUES (16,1,'Júlia Alves','E1','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-19');
+INSERT INTO `ingressos` VALUES (17,4,'Bruno Dias','F3','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-19');
+INSERT INTO `ingressos` VALUES (18,4,'Carlos Pereira','E3','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20');
+INSERT INTO `ingressos` VALUES (19,2,'Ana Lima','A4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20');
+INSERT INTO `ingressos` VALUES (20,4,'Carlos Pereira','E4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20');
+INSERT INTO `ingressos` VALUES (21,3,'Ana Lima','C7','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20');
+INSERT INTO `ingressos` VALUES (22,1,'Carlos Pereira','B2','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-21');
+INSERT INTO `ingressos` VALUES (23,1,'Ana Lima','B4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22');
+INSERT INTO `ingressos` VALUES (24,4,'Eric Zannini','E9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22');
+INSERT INTO `ingressos` VALUES (25,1,'Júlia Alves','F10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22');
 /*!40000 ALTER TABLE `ingressos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,7 +485,18 @@ UNLOCK TABLES;
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2026_08_27_000001_create_filmes_table',1),(5,'2026_08_27_000002_create_sessoes_table',1),(6,'2026_08_27_000003_create_ingressos_table',1),(7,'2026_08_27_000004_create_usuarios_table',1),(8,'2026_09_04_000001_create_fichas_table',1),(9,'2026_10_15_000001_create_atores_table',1),(10,'2026_10_15_000002_create_produtos_table',1),(11,'2026_10_16_000001_add_imagem_to_filmes_and_atores',1),(12,'2026_10_16_000002_add_campos_graficos',1);
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1);
+INSERT INTO `migrations` VALUES (2,'0001_01_01_000001_create_cache_table',1);
+INSERT INTO `migrations` VALUES (3,'0001_01_01_000002_create_jobs_table',1);
+INSERT INTO `migrations` VALUES (4,'2026_08_27_000001_create_filmes_table',1);
+INSERT INTO `migrations` VALUES (5,'2026_08_27_000002_create_sessoes_table',1);
+INSERT INTO `migrations` VALUES (6,'2026_08_27_000003_create_ingressos_table',1);
+INSERT INTO `migrations` VALUES (7,'2026_08_27_000004_create_usuarios_table',1);
+INSERT INTO `migrations` VALUES (8,'2026_09_04_000001_create_fichas_table',1);
+INSERT INTO `migrations` VALUES (9,'2026_10_15_000001_create_atores_table',1);
+INSERT INTO `migrations` VALUES (10,'2026_10_15_000002_create_produtos_table',1);
+INSERT INTO `migrations` VALUES (11,'2026_10_16_000001_add_imagem_to_filmes_and_atores',1);
+INSERT INTO `migrations` VALUES (12,'2026_10_16_000002_add_campos_graficos',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -462,7 +515,12 @@ UNLOCK TABLES;
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'Pipoca Grande','Pipoca',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',120),(2,'Pipoca Média','Pipoca',20.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',95),(3,'Refrigerante 500ml','Bebida',12.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',150),(4,'Água Mineral','Bebida',7.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',60),(5,'Chocolate','Doce',10.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',80),(6,'Combo Casal','Combo',55.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',45);
+INSERT INTO `produtos` VALUES (1,'Pipoca Grande','Pipoca',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',120);
+INSERT INTO `produtos` VALUES (2,'Pipoca Média','Pipoca',20.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',95);
+INSERT INTO `produtos` VALUES (3,'Refrigerante 500ml','Bebida',12.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',150);
+INSERT INTO `produtos` VALUES (4,'Água Mineral','Bebida',7.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',60);
+INSERT INTO `produtos` VALUES (5,'Chocolate','Doce',10.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',80);
+INSERT INTO `produtos` VALUES (6,'Combo Casal','Combo',55.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',45);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -472,7 +530,10 @@ UNLOCK TABLES;
 
 LOCK TABLES `sessoes` WRITE;
 /*!40000 ALTER TABLE `sessoes` DISABLE KEYS */;
-INSERT INTO `sessoes` VALUES (1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23'),(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23'),(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-10-23 01:54:23','2026-10-23 01:54:23'),(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `sessoes` VALUES (1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `sessoes` VALUES (2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `sessoes` VALUES (3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-10-23 01:54:23','2026-10-23 01:54:23');
+INSERT INTO `sessoes` VALUES (4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-10-23 01:54:23','2026-10-23 01:54:23');
 /*!40000 ALTER TABLE `sessoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -504,4 +565,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-23 19:14:12
+-- Dump completed on 2026-10-23 20:02:05
