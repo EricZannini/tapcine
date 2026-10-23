@@ -39,18 +39,8 @@ CREATE TABLE `atores` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `atores`
---
-
-LOCK TABLES `atores` WRITE;
-/*!40000 ALTER TABLE `atores` DISABLE KEYS */;
-INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL),(5,'Robert Downey Jr.','Estados Unidos','1965-04-04','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL);
-/*!40000 ALTER TABLE `atores` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `cache`
@@ -69,15 +59,6 @@ CREATE TABLE `cache` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cache`
---
-
-LOCK TABLES `cache` WRITE;
-/*!40000 ALTER TABLE `cache` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cache` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cache_locks`
 --
 
@@ -92,15 +73,6 @@ CREATE TABLE `cache_locks` (
   KEY `cache_locks_expiration_index` (`expiration`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cache_locks`
---
-
-LOCK TABLES `cache_locks` WRITE;
-/*!40000 ALTER TABLE `cache_locks` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cache_locks` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `failed_jobs`
@@ -124,15 +96,6 @@ CREATE TABLE `failed_jobs` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `failed_jobs`
---
-
-LOCK TABLES `failed_jobs` WRITE;
-/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `fichas`
 --
 
@@ -154,16 +117,6 @@ CREATE TABLE `fichas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `fichas`
---
-
-LOCK TABLES `fichas` WRITE;
-/*!40000 ALTER TABLE `fichas` DISABLE KEYS */;
-INSERT INTO `fichas` VALUES (1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-10-23 01:17:15','2026-10-23 01:17:15'),(2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-10-23 01:17:15','2026-10-23 01:17:15'),(3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-10-23 01:17:15','2026-10-23 01:17:15');
-/*!40000 ALTER TABLE `fichas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `filmes`
 --
 
@@ -181,18 +134,8 @@ CREATE TABLE `filmes` (
   `poster` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nota` decimal(3,1) NOT NULL DEFAULT '0.0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `filmes`
---
-
-LOCK TABLES `filmes` WRITE;
-/*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
-INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,8.2),(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,6.5),(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.0),(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.8),(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,8.0),(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.3),(7,'Backrooms','Terror','1h50','16+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,6.9),(8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,9.2),(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,6.0),(10,'Dia D','Suspense','2h30','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,7.5),(11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,9.0),(12,'Vingadores 3','Super-Herói','1h30','12+','2026-10-23 01:17:15','2026-10-23 01:17:15',NULL,8.7);
-/*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `ingressos`
@@ -213,18 +156,8 @@ CREATE TABLE `ingressos` (
   PRIMARY KEY (`id`),
   KEY `ingressos_sessao_id_foreign` (`sessao_id`),
   CONSTRAINT `ingressos_sessao_id_foreign` FOREIGN KEY (`sessao_id`) REFERENCES `sessoes` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ingressos`
---
-
-LOCK TABLES `ingressos` WRITE;
-/*!40000 ALTER TABLE `ingressos` DISABLE KEYS */;
-INSERT INTO `ingressos` VALUES (1,3,'Ana Lima','B3','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(2,1,'Ana Lima','C4','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(3,1,'Júlia Alves','E3','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(4,1,'Carlos Pereira','B2','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-13'),(5,1,'Eric Zannini','C1','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-14'),(6,2,'Maria Souza','B5','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-14'),(7,1,'Júlia Alves','E2','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-15'),(8,3,'Ana Lima','D8','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-15'),(9,3,'Eric Zannini','F3','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-15'),(10,4,'Bruno Dias','F9','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(11,4,'João Silva','C1','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(12,2,'Eric Zannini','A7','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(13,4,'Pedro Rocha','C8','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(14,2,'Pedro Rocha','B5','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-16'),(15,2,'Bruno Dias','D8','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-17'),(16,3,'Júlia Alves','A6','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(17,1,'Ana Lima','C8','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(18,1,'Carlos Pereira','A10','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(19,1,'Maria Souza','D5','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(20,2,'Pedro Rocha','C2','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-18'),(21,4,'Carlos Pereira','D2','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(22,1,'Pedro Rocha','F9','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(23,3,'Bruno Dias','F6','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(24,1,'Maria Souza','B4','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(25,1,'Júlia Alves','E4','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-19'),(26,2,'Maria Souza','A2','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-20'),(27,2,'Carlos Pereira','E3','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(28,2,'Bruno Dias','D3','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(29,2,'João Silva','E3','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(30,2,'Bruno Dias','A5','Inteira','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(31,2,'Pedro Rocha','C8','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-21'),(32,2,'Pedro Rocha','E10','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22'),(33,4,'Pedro Rocha','E4','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22'),(34,1,'João Silva','D5','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22'),(35,3,'Eric Zannini','E2','Meia','2026-10-23 01:17:15','2026-10-23 01:17:15','2026-10-22');
-/*!40000 ALTER TABLE `ingressos` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `job_batches`
@@ -249,15 +182,6 @@ CREATE TABLE `job_batches` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `job_batches`
---
-
-LOCK TABLES `job_batches` WRITE;
-/*!40000 ALTER TABLE `job_batches` DISABLE KEYS */;
-/*!40000 ALTER TABLE `job_batches` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `jobs`
 --
 
@@ -278,15 +202,6 @@ CREATE TABLE `jobs` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `jobs`
---
-
-LOCK TABLES `jobs` WRITE;
-/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `migrations`
 --
 
@@ -302,16 +217,6 @@ CREATE TABLE `migrations` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `migrations`
---
-
-LOCK TABLES `migrations` WRITE;
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2026_08_27_000001_create_filmes_table',1),(5,'2026_08_27_000002_create_sessoes_table',1),(6,'2026_08_27_000003_create_ingressos_table',1),(7,'2026_08_27_000004_create_usuarios_table',1),(8,'2026_09_04_000001_create_fichas_table',1),(9,'2026_10_15_000001_create_atores_table',1),(10,'2026_10_15_000002_create_produtos_table',1),(11,'2026_10_16_000001_add_imagem_to_filmes_and_atores',1),(12,'2026_10_16_000002_add_campos_graficos',1);
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `password_reset_tokens`
 --
 
@@ -325,15 +230,6 @@ CREATE TABLE `password_reset_tokens` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `password_reset_tokens`
---
-
-LOCK TABLES `password_reset_tokens` WRITE;
-/*!40000 ALTER TABLE `password_reset_tokens` DISABLE KEYS */;
-/*!40000 ALTER TABLE `password_reset_tokens` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `produtos`
@@ -355,16 +251,6 @@ CREATE TABLE `produtos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `produtos`
---
-
-LOCK TABLES `produtos` WRITE;
-/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (1,'Pipoca Grande','Pipoca',25.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',120),(2,'Pipoca Média','Pipoca',20.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',95),(3,'Refrigerante 500ml','Bebida',12.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',150),(4,'Água Mineral','Bebida',7.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',60),(5,'Chocolate','Doce',10.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',80),(6,'Combo Casal','Combo',55.00,'2026-10-23 01:17:16','2026-10-23 01:17:16',45);
-/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `sessions`
 --
 
@@ -383,15 +269,6 @@ CREATE TABLE `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sessions`
---
-
-LOCK TABLES `sessions` WRITE;
-/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `sessoes`
@@ -416,16 +293,6 @@ CREATE TABLE `sessoes` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sessoes`
---
-
-LOCK TABLES `sessoes` WRITE;
-/*!40000 ALTER TABLE `sessoes` DISABLE KEYS */;
-INSERT INTO `sessoes` VALUES (1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-10-23 01:17:15','2026-10-23 01:17:15'),(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-10-23 01:17:15','2026-10-23 01:17:15'),(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-10-23 01:17:15','2026-10-23 01:17:15'),(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-10-23 01:17:15','2026-10-23 01:17:15');
-/*!40000 ALTER TABLE `sessoes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -447,15 +314,6 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `usuarios`
 --
 
@@ -475,6 +333,157 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `usuarios_login_unique` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-10-23  0:27:53
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: db_pweb2_cinema
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Dumping data for table `atores`
+--
+
+LOCK TABLES `atores` WRITE;
+/*!40000 ALTER TABLE `atores` DISABLE KEYS */;
+INSERT INTO `atores` VALUES (1,'Tom Hanks','Estados Unidos','1956-07-09','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/tom-hanks.jpg'),(2,'Fernanda Montenegro','Brasil','1929-10-16','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/fernanda-montenegro.jpg'),(3,'Scarlett Johansson','Estados Unidos','1984-11-22','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/scarlett-johansson.jpg'),(4,'Wagner Moura','Brasil','1976-06-27','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/wagner-moura.jpg'),(5,'Robert Downey Jr.','Estados Unidos','1965-04-04','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/ator/robert-downey-jr.jpg');
+/*!40000 ALTER TABLE `atores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `cache_locks`
+--
+
+LOCK TABLES `cache_locks` WRITE;
+/*!40000 ALTER TABLE `cache_locks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache_locks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `fichas`
+--
+
+LOCK TABLES `fichas` WRITE;
+/*!40000 ALTER TABLE `fichas` DISABLE KEYS */;
+INSERT INTO `fichas` VALUES (1,1,'Aaron Horvath','2023','O encanador Mario embarca em uma aventura pelo Reino dos Cogumelos.','2026-10-23 01:54:23','2026-10-23 01:54:23'),(2,2,'Catherine Hardwicke','2008','Uma jovem se apaixona por um vampiro em uma pequena cidade.','2026-10-23 01:54:23','2026-10-23 01:54:23'),(3,3,'Roberto Santucci','2023','Uma comédia sobre confusões e trocas inesperadas.','2026-10-23 01:54:23','2026-10-23 01:54:23');
+/*!40000 ALTER TABLE `fichas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `filmes`
+--
+
+LOCK TABLES `filmes` WRITE;
+/*!40000 ALTER TABLE `filmes` DISABLE KEYS */;
+INSERT INTO `filmes` VALUES (1,'Super Mario Galaxy O Filme','Ação e Aventura','1h39','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/super-mario-galaxy.jpg',8.2),(2,'Crepúsculo (Relançamento)','Fantasia e Romance','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/crepusculo.jpg',6.5),(3,'Cara de Um, Focinho de Outro','Animação, Aventura e Comédia','1h45','6+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/cara-de-um-focinho-de-outro.jpg',7.0),(4,'Pânico 7','Terror e Mistério','1h54','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/panico-7.jpg',7.8),(5,'Devoradores de Estrelas','Ação e Aventura','2h02','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/devoradores-de-estrelas.jpg',8.0),(6,'Velhos Bandidos','Policial, Ação e Comédia','1h33','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/velhos-bandidos.jpg',7.3),(7,'Backrooms','Terror','1h50','16+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/backrooms.jpg',6.9),(8,'Scarface','Ação e Aventura','2h50','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/scarface.jpg',9.2),(9,'Todo Mundo em Pânico 6','Comédia','1h35','18+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/todo-mundo-em-panico-6.jpg',6.0),(10,'Dia D','Suspense','2h30','12+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/dia-d.jpg',7.5),(11,'Vingadores','Ação e Aventura','2h30','14+','2026-10-23 01:54:23','2026-10-23 01:54:23','imagem/filme/vingadores.jpg',9.0),(12,'Vingadores: Guerra Infinita','Super-Herói','1h30','12+','2026-10-23 01:54:23','2026-10-23 01:56:44','imagem/filme/vingadores-3.jpg',8.7);
+/*!40000 ALTER TABLE `filmes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `ingressos`
+--
+
+LOCK TABLES `ingressos` WRITE;
+/*!40000 ALTER TABLE `ingressos` DISABLE KEYS */;
+INSERT INTO `ingressos` VALUES (1,3,'Carlos Pereira','B10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-13'),(2,4,'João Silva','F7','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-14'),(3,1,'Júlia Alves','F2','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-15'),(4,3,'Júlia Alves','F8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-15'),(5,3,'Ana Lima','F10','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16'),(6,2,'Ana Lima','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16'),(7,1,'Carlos Pereira','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-16'),(8,2,'Pedro Rocha','B1','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(9,3,'Bruno Dias','D8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(10,4,'Júlia Alves','E2','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(11,2,'Eric Zannini','F10','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(12,4,'João Silva','B8','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-17'),(13,4,'Júlia Alves','B10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18'),(14,2,'Júlia Alves','A9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18'),(15,4,'Júlia Alves','B9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-18'),(16,1,'Júlia Alves','E1','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-19'),(17,4,'Bruno Dias','F3','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-19'),(18,4,'Carlos Pereira','E3','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(19,2,'Ana Lima','A4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(20,4,'Carlos Pereira','E4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(21,3,'Ana Lima','C7','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-20'),(22,1,'Carlos Pereira','B2','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-21'),(23,1,'Ana Lima','B4','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22'),(24,4,'Eric Zannini','E9','Inteira','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22'),(25,1,'Júlia Alves','F10','Meia','2026-10-23 01:54:23','2026-10-23 01:54:23','2026-10-22');
+/*!40000 ALTER TABLE `ingressos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `job_batches`
+--
+
+LOCK TABLES `job_batches` WRITE;
+/*!40000 ALTER TABLE `job_batches` DISABLE KEYS */;
+/*!40000 ALTER TABLE `job_batches` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2026_08_27_000001_create_filmes_table',1),(5,'2026_08_27_000002_create_sessoes_table',1),(6,'2026_08_27_000003_create_ingressos_table',1),(7,'2026_08_27_000004_create_usuarios_table',1),(8,'2026_09_04_000001_create_fichas_table',1),(9,'2026_10_15_000001_create_atores_table',1),(10,'2026_10_15_000002_create_produtos_table',1),(11,'2026_10_16_000001_add_imagem_to_filmes_and_atores',1),(12,'2026_10_16_000002_add_campos_graficos',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+LOCK TABLES `password_reset_tokens` WRITE;
+/*!40000 ALTER TABLE `password_reset_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_reset_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `produtos`
+--
+
+LOCK TABLES `produtos` WRITE;
+/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
+INSERT INTO `produtos` VALUES (1,'Pipoca Grande','Pipoca',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',120),(2,'Pipoca Média','Pipoca',20.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',95),(3,'Refrigerante 500ml','Bebida',12.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',150),(4,'Água Mineral','Bebida',7.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',60),(5,'Chocolate','Doce',10.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',80),(6,'Combo Casal','Combo',55.00,'2026-10-23 01:54:23','2026-10-23 01:54:23',45);
+/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `sessoes`
+--
+
+LOCK TABLES `sessoes` WRITE;
+/*!40000 ALTER TABLE `sessoes` DISABLE KEYS */;
+INSERT INTO `sessoes` VALUES (1,1,'Sala 1','2026-09-10','14:00:00',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23'),(2,2,'Sala 2','2026-09-10','16:30:00',25.00,'2026-10-23 01:54:23','2026-10-23 01:54:23'),(3,3,'Sala 3','2026-09-11','19:00:00',30.00,'2026-10-23 01:54:23','2026-10-23 01:54:23'),(4,4,'Sala VIP','2026-09-12','20:00:00',45.00,'2026-10-23 01:54:23','2026-10-23 01:54:23');
+/*!40000 ALTER TABLE `sessoes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Dumping data for table `usuarios`
@@ -482,7 +491,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$umUmMgZTGRut3TXUu43omunvgYggtfjAKDcL4kudMJ5fMT6Kx0ybu','2026-10-23 01:17:15','2026-10-23 01:17:15');
+INSERT INTO `usuarios` VALUES (1,'Administrador','(49) 99999-0000','admin@tapcine.com','admin','$2y$12$5X6QkvtAbWKNHweTRLlHSOxEYujuSCu4n9mshCGoL3YnSIId6OPTS','2026-10-23 01:54:22','2026-10-23 01:54:22');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -495,4 +504,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-22 19:17:54
+-- Dump completed on 2026-10-23  0:27:53
